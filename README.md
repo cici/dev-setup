@@ -5,6 +5,8 @@ dev-setup
   <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/repo-header.gif">
 </p>
 
+    $ ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"
+
 ## Motivation
 
 Setting up a new developer machine can be an **ad-hoc, manual, and time-consuming** process.  `dev-setup` aims to **simplify** the process with **easy-to-understand instructions** and **dotfiles/scripts** to **automate the setup** of the following:
