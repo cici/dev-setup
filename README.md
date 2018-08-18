@@ -11,14 +11,12 @@ Setting up a new developer machine can be an **ad-hoc, manual, and time-consumin
 
 * **OS X updates and Xcode Command Line Tools**
 * **OS X defaults** geared towards developers
-* **Developer tools**: Vim, bash, tab completion, curl, git, GNU core utils, Python, Ruby, etc
-* **Developer apps**: iTerm2, Sublime Text, Atom, VirtualBox, Vagrant, Docker, Chrome, etc
+* **Developer tools**: Vim, bash, tab completion, curl, git, GNU core utils, IntelliJ IDEA, Java, Python
+* **Developer apps**: iTerm2, Sublime Text, Atom, Docker, Chrome, etc
 * **Python data analysis**: IPython Notebook, NumPy, Pandas, Scikit-Learn, Matplotlib, etc
-* **Big Data platforms**: Spark (with IPython Notebook integration) and MapReduce
 * **Cloud services**: Amazon Web Services (Boto, AWS CLI, S3cmd, etc) and Heroku
 * **Common data stores**: MySQL, PostgreSQL, MongoDB, Redis, and Elasticsearch
 * **Javascript web development**: Node.js, JSHint, and Less
-* **Android development**: Java, Android SDK, Android Studio, IntelliJ IDEA
 
 ### But...I Don't Need All These Tools!
 
@@ -29,12 +27,6 @@ Setting up a new developer machine can be an **ad-hoc, manual, and time-consumin
 If you're interested in automation, `dev-setup` provides a customizable [setup script](#single-setup-script).  There's really no one-size-fits-all solution for developers so you're encouraged to make tweaks to suit your needs.
 
 [Credits](#credits): This repo builds on the awesome work from [Mathias Bynens](https://github.com/mathiasbynens) and [Nicolas Hery](https://github.com/nicolashery).
-
-### For Automation, What About Vagrant, Docker, or Boxen?
-
-[Vagrant](#vagrant) and [Docker](#docker) are great tools and are set up by this repo. I've found that Vagrant works well to ensure dev matches up with test and production tiers. I've only started playing around with Docker for side projects and it looks very promising. However, for Mac users, Docker and Vagrant both rely on **virtual machines**, which have their own considerations/pros/cons.
-
-[Boxen](https://boxen.github.com/) is a cool solution, although some might find it better geared towards "more mature companies or devops teams". I've seen some discussions of [difficulties as it is using Puppet under the hood](https://github.com/boxen/our-boxen/issues/742).
 
 This repo takes a more **light-weight** approach to automation using a combination of **Homebrew, Homebrew Cask, and shell scripts** to do basic system setup.  It also provides **easy-to understand instructions** for installation, configuration, and usage for each developer app or tool.
 
@@ -67,8 +59,6 @@ This repo takes a more **light-weight** approach to automation using a combinati
     * Sets up common data stores
 * [web.sh script](#websh-script)
     * Sets up JavaScript web development
-* [android.sh script](#androidsh-script)
-    * Sets up Android development
 
 ## Section 2: General Apps and Tools
 
@@ -78,11 +68,10 @@ This repo takes a more **light-weight** approach to automation using a combinati
 * [iTerm2](#iterm2)
 * [Vim](#vim)
 * [Git](#git)
-* [VirtualBox](#virtualbox)
-* [Vagrant](#vagrant)
 * [Docker](#docker)
 * [Homebrew](#homebrew)
-* [Ruby and rbenv](#ruby-and-rbenv)
+* [IntelliJ IDEA](#intellij-idea)
+* [Java](#java)
 * [Python](#python)
 * [Pip](#pip)
 * [Virtualenv](#virtualenv)
@@ -103,8 +92,6 @@ This repo takes a more **light-weight** approach to automation using a combinati
 
 ## Section 4: Big Data, AWS, and Heroku
 
-* [Spark](#spark)
-* [MapReduce](#mapreduce)
 * [Awesome AWS](#awesome-aws-)
 * [AWS Account](#aws-account)
 * [AWS CLI](#aws-cli)
@@ -133,14 +120,7 @@ This repo takes a more **light-weight** approach to automation using a combinati
 * [JSHint](#jshint)
 * [Less](#less)
 
-## Section 7: Android Development
-
-* [Java](#java)
-* [Android SDK](#android-sdk)
-* [Android Studio](#android-studio)
-* [IntelliJ IDEA](#intellij-idea)
-
-## Section 8: Misc
+## Section 7: Misc
 
 * [Contributions](#contributions)
 * [Credits](#credits)
@@ -181,26 +161,24 @@ Run `bootstrap.sh`, `osxprep.sh`, `brew.sh`, and `osx.sh`, `pydata.sh`, `aws.sh`
 
 #### Scripts
 
-* [.dots](https://github.com/donnemartin/dev-setup/blob/master/.dots)
+* [.dots](https://github.com/cici/dev-setup/blob/master/.dots)
     * Runs specified scripts
-* [bootstrap.sh](https://github.com/donnemartin/dev-setup/blob/master/bootstrap.sh)
+* [bootstrap.sh](https://github.com/cici/dev-setup/blob/master/bootstrap.sh)
     * Syncs dev-setup to your local home directory `~`
-* [osxprep.sh](https://github.com/donnemartin/dev-setup/blob/master/osxprep.sh)
+* [osxprep.sh](https://github.com/cici/dev-setup/blob/master/osxprep.sh)
     * Updates OS X and installs Xcode command line tools
-* [brew.sh](https://github.com/donnemartin/dev-setup/blob/master/brew.sh)
+* [brew.sh](https://github.com/cici/dev-setup/blob/master/brew.sh)
     * Installs common Homebrew formulae and apps
-* [osx.sh](https://github.com/donnemartin/dev-setup/blob/master/osx.sh)
+* [osx.sh](https://github.com/cici/dev-setup/blob/master/osx.sh)
     * Sets up OS X defaults geared towards developers
-* [pydata.sh](https://github.com/donnemartin/dev-setup/blob/master/pydata.sh)
+* [pydata.sh](https://github.com/cici/dev-setup/blob/master/pydata.sh)
     * Sets up python for data analysis
-* [aws.sh](https://github.com/donnemartin/dev-setup/blob/master/aws.sh)
+* [aws.sh](https://github.com/cici/dev-setup/blob/master/aws.sh)
     * Sets up Spark, Hadoop MapReduce, and Amazon Web Services
-* [datastores.sh](https://github.com/donnemartin/dev-setup/blob/master/datastores.sh)
+* [datastores.sh](https://github.com/cici/dev-setup/blob/master/datastores.sh)
     * Sets up common data stores
-* [web.sh](https://github.com/donnemartin/dev-setup/blob/master/web.sh)
+* [web.sh](https://github.com/cici/dev-setup/blob/master/web.sh)
     * Sets up JavaScript web development
-* [android.sh](https://github.com/donnemartin/dev-setup/blob/master/android.sh)
-    * Sets up Android development
 
 **Notes:**
 
