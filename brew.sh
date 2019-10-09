@@ -21,6 +21,8 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
+brew cask upgrade
+
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -30,11 +32,20 @@ sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
+brew install the_silver_searcher
+
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed
+#brew install gnu-sed
 # Install Bash 4.
 brew install bash
 brew install bash-completion2
+brew install bash-completion@2
+
+# Install misc dev tools
+brew install docker-completion
+brew install httpie
+brew install tmux
+
 # We installed the new shell, now we have to activate it
 echo "Adding the newly installed shell to the list of allowed shells"
 # Prompts for password
@@ -60,6 +71,8 @@ brew install ruby-build
 brew install rbenv
 LINE='eval "$(rbenv init -)"'
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
+
+brew cask install avast-security
 
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
@@ -103,6 +116,7 @@ brew install xz
 # Install other useful binaries.
 brew install ack
 brew install dark-mode
+brew install diff-so-fancy
 #brew install exiv2
 brew install ffmpeg
 brew install git
@@ -111,13 +125,9 @@ brew install git-flow
 brew install git-extras
 brew install hub
 brew install imagemagick --with-webp
-brew install lua
-brew install lynx
 brew install p7zip
-brew install pigz
 brew install pv
 brew install rename
-brew install rhino
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
@@ -137,18 +147,22 @@ brew install heroku/brew/heroku
 heroku update
 
 # Core casks
-brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="~/Applications" iterm2
-brew cask install --appdir="~/Applications" java
-brew cask install --appdir="~/Applications" intellij-idea-ce
-brew cask install --appdir="~/Applications" xquartz
+brew tap homebrew/cask-versions
+brew cask install --appdir="/Applications" alfred3
+brew cask install --appdir="/Applications" iterm2
+brew cask install --appdir="/Applications" postbox
+brew cask install --appdir="/Applications" java
+brew cask install --appdir="/Applications" xquartz
 
 # Development tool casks
 brew cask install --appdir="/Applications" sublime-text
-brew cask install --appdir="/Applications" atom
 brew cask install --appdir="/Applications" macdown
+brew cask install --appdir="/Applications" visual-studio-code-insiders
+brew cask install --appdir="/Applications" intellij-idea-ce
+brew cask install --appdir="/Applications" postman
 
 # Misc casks
+brew cask install --appdir="/Applications" cakebrew
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" skype
@@ -157,8 +171,15 @@ brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" utorrent
 brew cask install --appdir="/Applications" vlc
-#brew cask install --appdir="/Applications" 1password
-#brew cask install --appdir="/Applications" gimp
+brew cask install --appdir="/Applications" zoom
+brew cask install --appdir="/Applications" wine-stable
+brew cask install --appdir="/Applications" 1password
+brew cask install --appdir="/Applications" 1password-cli
+brew cask install --appdir="/Applications" gimp
+brew cask install --appdir="/Applications" whatsapp
+brew cask install --appdir="/Applications" spotify
+brew cask install "caskroom/fonts/font-source-code-pro"
+brew cask install "caskroom/fonts/font-fira-code"
 #brew cask install --appdir="/Applications" inkscape
 
 #Remove comment to install LaTeX distribution MacTeX
@@ -170,6 +191,20 @@ brew install boot2docker
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+
+
+# ---------------------------------------------
+# Terminal gimmicks xD
+# ---------------------------------------------
+
+# The computer fortune teller
+brew install fortune
+
+# The famous cowsay
+brew install cowsay
+
+# Multicolored text output
+brew install lolcat
 
 # Remove outdated versions from the cellar.
 brew cleanup

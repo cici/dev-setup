@@ -1,3 +1,6 @@
+# git credential file
+.gitconfig.local
+
 # IntelliJ IDEA IDE
 .idea
 
@@ -7,6 +10,11 @@
 # Folder view configuration files
 .DS_Store
 Desktop.ini
+
+# working files
+.vim/viminfo
+.vim/swaps/*
+.vim/undo
 
 # Thumbnail cache files
 ._*
@@ -25,3 +33,7 @@ Thumbs.db
 
 # Repo scratch directory
 scratch/
+
+# Node.js & npm.
+node_modules
+npm-debug.log

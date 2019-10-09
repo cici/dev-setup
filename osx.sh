@@ -2,6 +2,10 @@
 
 # ~/osx.sh — Originally from https://mths.be/osx
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -20,6 +24,17 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set standby delay to 24 hours (default is 1 hour or 3600)
 #sudo pmset -a standbydelay 86400
+
+
+SCREENSHOT_FOLDER=~/Desktop/Screenshots
+
+mkdir -p $SCREENSHOT_FOLDER
+
+# Set the default file format for screenshots to png
+defaults write com.apple.screencapture type png
+
+# Set default screenshot location to a specific folder
+defaults write com.apply.screencapture location $SCREENSHOT_FOLDER
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -186,13 +201,13 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Set language and text formats
-#defaults write NSGlobalDomain AppleLanguages -array "en"
-#defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
-#defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
-#defaults write NSGlobalDomain AppleMetricUnits -bool false
+defaults write NSGlobalDomain AppleLanguages -array "en"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
+defaults write NSGlobalDomain AppleMetricUnits -bool false
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-#sudo systemsetup -settimezone "America/New_York" > /dev/null
+sudo systemsetup -settimezone "America/New_York" > /dev/null
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -208,11 +223,11 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Save screenshots to Documents/screenshots 
+# Save screenshots to Documents/screenshots
 defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots"
 
-# Save screenshots in JPG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "jpg"
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, PNG, TIFF)
+defaults write com.apple.screencapture type -string "png"
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -388,6 +403,7 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
+
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
@@ -666,11 +682,18 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 ###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
 # Messages                                                                    #
 ###############################################################################
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+#defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 # Disable smart quotes as it’s annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
@@ -707,7 +730,7 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 
 # Disable signing emails by default
-defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
+#defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
 
 ###############################################################################
 # Sublime Text                                                                #
@@ -759,6 +782,9 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # Hide the app in the background if it’s not the front-most window
 defaults write com.twitter.twitter-mac HideInBackground -bool true
+
+# Activate audible chime when power cable is plugged in.
+defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app
 
 ###############################################################################
 # Kill affected applications                                                  #

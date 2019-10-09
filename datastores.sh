@@ -20,7 +20,8 @@ brew update
 
 # Install data stores
 brew install mysql
-brew install postgresql
+brew services start mysql
+#brew install postgresql
 brew install mongo
 brew install redis
 brew install elasticsearch

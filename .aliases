@@ -41,6 +41,9 @@ alias sudo='sudo '
 # Get week number
 alias week='date +%V'
 
+# Edit hosts file
+alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
+
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
@@ -118,6 +121,12 @@ alias badge="tput bel"
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
 
+# Networking. IP address, dig, DNS
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+# alias dig="dig +nocmd any +multiline +noall +answer"
+# wget sucks with certificates. Let's keep it simple.
+alias wget="curl -O"
+
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
@@ -139,3 +148,25 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# Recursively delete `.DS_Store` files
+alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+alias diskspace_report="df -P -kHl"
+alias free_diskspace_report="diskspace_report"
+
+###
+# GIT STUFF
+###
+alias g="git"
+alias pull="git pull"
+alias push="git push"
+
+# Undo a `git push`
+alias undopush="git push -f origin HEAD^:master"
+
+
+
+# Update installed Ruby gems, Homebrew, npm, and their installed packages
+alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm-check -g -u"
+alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update --no-document'
