@@ -29,21 +29,29 @@ sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 # Install some other useful utilities like `sponge`.
 brew install moreutils # https://joeyh.name/code/moreutils/
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
-# Install Bash 4.
-brew install bash
-brew install bash-completion2
+brew install findutils # https://www.gnu.org/software/findutils/
+
+# Install ZSH
+echo "Installing zsh and Oh-My-Zsh"
+brew install zsh # https://www.zsh.org/
+brew install zsh-completions # https://github.com/zsh-users/zsh-completions
+
+# Install Oh-My-Zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # We installed the new shell, now we have to activate it
 echo "Adding the newly installed shell to the list of allowed shells"
 # Prompts for password
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells'
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # Change to the new shell, prompts for password
-chsh -s /usr/local/bin/bash
+chsh -s /usr/local/bin/zsh
 
 # Install `wget` with IRI support.
 brew install wget --with-iri # https://www.gnu.org/software/wget/
 
 # Install Development Languages
+brew install gradle # https://gradle.org/
 brew cask install java
 brew install node # https://nodejs.org/en/
 brew install python3
@@ -70,17 +78,24 @@ brew install sqlmap # http://sqlmap.org/
 brew install xpdf # https://www.xpdfreader.com/
 
 # Install other useful binaries.
+brew install awscli # https://aws.amazon.com/cli/
 brew install bitwarden-cli # https://bitwarden.com/
 brew install docker # https://www.docker.com/
-brew install ffmpeg
+brew install ffmpeg # https://ffmpeg.org/
 brew install git # https://git-scm.com/book/en/v1/Getting-Started-Installing-Git
 brew install git-extras # https://github.com/tj/git-extras
+brew install httpie # https://httpie.org/
 brew install imagemagick --with-webp # https://imagemagick.org/
 brew install openssh # https://www.openssh.com/
+brew install openssl # https://www.openssl.org/
 brew install pandoc # https://pandoc.org/
 brew install speedtest_cli # https://github.com/sivel/speedtest-cli
 brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
 brew install tree # http://mama.indstate.edu/users/ice/tree/
+brew install wine # https://www.winehq.org/
+brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
+
+
 
 
 # Install Heroku
