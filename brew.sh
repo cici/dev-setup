@@ -21,6 +21,8 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
+brew cask upgrade
+
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils # https://www.gnu.org/software/coreutils/
@@ -30,6 +32,7 @@ sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 brew install moreutils # https://joeyh.name/code/moreutils/
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils # https://www.gnu.org/software/findutils/
+
 
 # Install ZSH
 echo "Installing zsh and Oh-My-Zsh"
@@ -124,6 +127,7 @@ brew cask install --appdir="/Applications" macdown # https://macdown.uranusjr.co
 
 # Misc casks
 brew cask install --appdir="/Applications" 1password # https://1password.com/
+brew cask install --appdir="/Applications" atom
 brew cask install --appdir="/Applications" avast-security # https://www.avast.com/en-us/index
 brew cask install --appdir="/Applications" bitwarden # https://bitwarden.com/
 brew cask install --appdir="/Applications" dash # https://kapeli.com/dash
@@ -135,6 +139,7 @@ brew cask install --appdir="/Applications" gimp # https://www.gimp.org/
 brew cask install --appdir="/Applications" gitter # https://gitter.im/explore/tags/homebrew
 brew cask install --appdir="/Applications" google-chrome # https://www.google.com/chrome/
 brew cask install --appdir="/Applications" handbrake # https://handbrake.fr/
+brew cask install --appdir="/Applications" intellij-idea-ce
 brew cask install --appdir="/Applications" mysqlworkbench # https://www.mysql.com/products/workbench/
 brew cask install --appdir="/Applications" postbox # https://www.postbox-inc.com/
 brew cask install --appdir="/Applications" postman # https://www.getpostman.com/
@@ -143,11 +148,30 @@ brew cask install --appdir="/Applications" slack # https://slack.com/
 brew cask install --appdir="/Applications" sourcetree # https://www.sourcetreeapp.com/
 brew cask install --appdir="/Applications" spotify # https://www.spotify.com/us/
 brew cask install --appdir="/Applications" transmission # https://transmissionbt.com/
-brew cask install --appdir="/Applications" visual-studio-code # https://code.visualstudio.com/
+brew cask install --appdir="/Applications" visual-studio-code-insiders
 brew cask install --appdir="/Applications" vlc # https://www.videolan.org/vlc/
+brew cask install --appdir="/Applications" wine-stable
+brew cask install --appdir="/Applications" zoom
+
+brew cask install --appdir="/Applications" 1password-cli
+brew cask install "caskroom/fonts/font-source-code-pro"
+brew cask install "caskroom/fonts/font-fira-code"
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
+
+# ---------------------------------------------
+# Terminal gimmicks xD
+# ---------------------------------------------
+
+# The computer fortune teller
+brew install fortune
+
+# The famous cowsay
+brew install cowsay
+
+# Multicolored text output
+brew install lolcat
 
 # Remove outdated versions from the cellar.
 brew cleanup
