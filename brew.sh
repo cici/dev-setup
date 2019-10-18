@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
+# Helper functions
+function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
+function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
+function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
+
+echo_ok "Install starting. You will be asked for your password (for sudo)."
 
 # Ask for the administrator password upfront.
 sudo -v
@@ -10,193 +15,164 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Check for Homebrew,
 # Install if we don't have it
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if test ! $(which brew); then
-  echo "Installing homebrew..."
+  echo_warn "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo_ok "Homebrew already installed"
 fi
 
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
-
-brew cask upgrade
+brew upgrade --all && brew cask upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-brew install coreutils
+brew install coreutils # https://www.gnu.org/software/coreutils/
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
 # Install some other useful utilities like `sponge`.
-brew install moreutils
+brew install moreutils # https://joeyh.name/code/moreutils/
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
-brew install the_silver_searcher
+brew install findutils # https://www.gnu.org/software/findutils/
 
-# Install GNU `sed`, overwriting the built-in `sed`.
-#brew install gnu-sed
-# Install Bash 4.
-brew install bash
-brew install bash-completion2
-brew install bash-completion@2
 
-# Install misc dev tools
-brew install docker-completion
-brew install httpie
-brew install tmux
+# Install ZSH
+echo_warn "Installing zsh and Oh-My-Zsh"
+brew install zsh # https://www.zsh.org/
+brew install zsh-completions # https://github.com/zsh-users/zsh-completions
+
+# Install Oh-My-Zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # We installed the new shell, now we have to activate it
-echo "Adding the newly installed shell to the list of allowed shells"
+echo_warn "Adding the newly installed shell to the list of allowed shells"
 # Prompts for password
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells'
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # Change to the new shell, prompts for password
-chsh -s /usr/local/bin/bash
+chsh -s /usr/local/bin/zsh
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget --with-iri # https://www.gnu.org/software/wget/
 
-# Install RingoJS and Narwhal.
-# Note that the order in which these are installed is important;
-# see http://git.io/brew-narwhal-ringo.
-# brew install ringojs
-# brew install narwhal
-
-# Install Python
-brew install python
+# Install Development Languages
+echo_warn "Installing development languages..."
+brew install gradle # https://gradle.org/
+brew cask install java
+brew install node # https://nodejs.org/en/
 brew install python3
-
-# Install ruby-build and rbenv
+brew install ruby
 brew install ruby-build
 brew install rbenv
 LINE='eval "$(rbenv init -)"'
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
-brew cask install avast-security
-
-# Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
-
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
-
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install homebrew/x11/xpdf
-brew install xz
+echo_warn "Installing security tools"
+brew install bfg  # https://rtyley.github.io/bfg-repo-cleaner/
+brew install nmap # https://nmap.org/
+brew install sqlmap # http://sqlmap.org/
 
 # Install other useful binaries.
-brew install ack
-brew install dark-mode
-brew install diff-so-fancy
-#brew install exiv2
-brew install ffmpeg
-brew install git
-brew install git-lfs
-brew install git-flow
-brew install git-extras
-brew install hub
-brew install imagemagick --with-webp
-brew install p7zip
-brew install pv
-brew install rename
-brew install speedtest_cli
-brew install ssh-copy-id
-brew install tree
-brew install webkit2png
-brew install zopfli
-brew install pkg-config libffi
-brew install pandoc
-
-# Lxml and Libxslt
-brew install libxml2
-brew install libxslt
-brew link libxml2 --force
-brew link libxslt --force
+echo_warn "Installing command line tools"
+brew install awscli # https://aws.amazon.com/cli/
+brew install bitwarden-cli # https://bitwarden.com/
+brew install docker # https://www.docker.com/
+brew install ffmpeg # https://ffmpeg.org/
+brew install git # https://git-scm.com/book/en/v1/Getting-Started-Installing-Git
+brew install git-extras # https://github.com/tj/git-extras
+brew install httpie # https://httpie.org/
+brew install imagemagick --with-webp # https://imagemagick.org/
+brew install jq # https://stedolan.github.io/jq/
+brew install openssh # https://www.openssh.com/
+brew install openssl # https://www.openssl.org/
+brew install pandoc # https://pandoc.org/
+brew install speedtest_cli # https://github.com/sivel/speedtest-cli
+brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
+brew install tree # http://mama.indstate.edu/users/ice/tree/
+brew install vim --override-system-vi
+brew install wine # https://www.winehq.org/
+brew install xpdf # https://www.xpdfreader.com/
+brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
 
 # Install Heroku
 brew install heroku/brew/heroku
 heroku update
 
-# Core casks
+# Brew Taps
+echo_warn "Tapping some casks..."
+brew tap bramstein/webfonttools
+brew tap heroku/brew
+brew tap homebrew/cask
+brew tap homebrew/cask-cask
+brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
-brew cask install --appdir="/Applications" alfred3
-brew cask install --appdir="/Applications" iterm2
-brew cask install --appdir="/Applications" postbox
-brew cask install --appdir="/Applications" java
-brew cask install --appdir="/Applications" xquartz
+brew tap homebrew/core
+brew tap homebrew/services
 
-# Development tool casks
-brew cask install --appdir="/Applications" sublime-text
-brew cask install --appdir="/Applications" macdown
-brew cask install --appdir="/Applications" visual-studio-code-insiders
-brew cask install --appdir="/Applications" intellij-idea-ce
-brew cask install --appdir="/Applications" postman
+# Install fonts
+echo_warn "Installing fonts and font tools..."
+brew install sfnt2woff
+brew install sfnt2woff-zopfli
+brew install woff2
+brew cask install font-fira-code
+brew cask install font-hack-nerd-font
+brew cask install font-hack-nerd-font-mono
+brew cask install font-inconsolata-nerd-font
+brew cask install font-inconsolata-nerd-font-mono
+brew cask install font-source-code-pro
 
-# Misc casks
-brew cask install --appdir="/Applications" cakebrew
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" evernote
-brew cask install --appdir="/Applications" utorrent
-brew cask install --appdir="/Applications" vlc
-brew cask install --appdir="/Applications" zoom
-brew cask install --appdir="/Applications" wine-stable
-brew cask install --appdir="/Applications" 1password
-brew cask install --appdir="/Applications" 1password-cli
-brew cask install --appdir="/Applications" gimp
-brew cask install --appdir="/Applications" whatsapp
-brew cask install --appdir="/Applications" spotify
-brew cask install "caskroom/fonts/font-source-code-pro"
-brew cask install "caskroom/fonts/font-fira-code"
-#brew cask install --appdir="/Applications" inkscape
 
-#Remove comment to install LaTeX distribution MacTeX
-#brew cask install --appdir="/Applications" mactex
 
 # Install Docker, which requires virtualbox
 brew install docker
 brew install boot2docker
 
-# Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+echo_warn "Installing graphical tools"
+brew cask install 1password # https://1password.com/
+brew cask install 1password-cli # https://support.1password.com/command-line/
+brew cask install alfred # https://www.alfredapp.com/
+brew cask install atom # https://atom.io/
+brew cask install avast-security # https://www.avast.com/en-us/index
+brew cask install bitwarden # https://bitwarden.com/
+brew cask install dash # https://kapeli.com/dash
+brew cask install diffmerge # https://sourcegear.com/diffmerge/
+brew cask install dropbox # https://www.dropbox.com/
+brew cask install evernote # https://evernote.com/
+brew cask install firefox # https://www.mozilla.org/en-US/firefox/new/
+brew cask install gimp # https://www.gimp.org/
+brew cask install gitter # https://gitter.im/explore/tags/homebrew
+brew cask install google-chrome # https://www.google.com/chrome/
+brew cask install handbrake # https://handbrake.fr/
+brew cask install intellij-idea-ce # https://www.jetbrains.com/idea/
+#brew cask install iterm2 # https://www.iterm2.com/
+brew cask install kitty # https://github.com/kovidgoyal/kitty
+brew cask install macdown # https://macdown.uranusjr.com/
+brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
+brew cask install postbox # https://www.postbox-inc.com/
+brew cask install postman # https://www.getpostman.com/
+brew cask install skype # https://www.skype.com/en/
+brew cask install slack # https://slack.com/
+brew cask install sourcetree # https://www.sourcetreeapp.com/
+brew cask install spotify # https://www.spotify.com/us/
+brew cask install transmission # https://transmissionbt.com/
+brew cask install visual-studio-code-insiders # https://code.visualstudio.com/insiders/
+brew cask install vlc # https://www.videolan.org/vlc/
+brew cask install wine-stable # https://wiki.winehq.org/MacOS
+brew cask install zoomus # https://www.zoom.us/
 
+echo_warn "Installing quicklook plugins..."
+# Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
 
 # ---------------------------------------------
 # Terminal gimmicks xD
 # ---------------------------------------------
-
+echo_warn "Installing fun terminal commands..."
 # The computer fortune teller
 brew install fortune
 
@@ -206,5 +182,8 @@ brew install cowsay
 # Multicolored text output
 brew install lolcat
 
+echo_warn "Cleaning up the cellar"
 # Remove outdated versions from the cellar.
-brew cleanup
+brew cleanup && brew cask cleanup
+
+echo_ok "BREW COMPLETE!"
