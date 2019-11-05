@@ -1,7 +1,4 @@
-[user]
-    name = Ci-Ci Thomson
-    email = public.thomson@gmail.com
-
+; vim: ft=gitconfig
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -105,21 +102,22 @@
         git reset --soft \"HEAD~$n\"; \
     }; f"
 
-[apply]
-    # Detect whitespace errors when applying a patch
-    whitespace = fix
+[commit]
+	verbose = true
+	gpgsign = true
 
 [core]
-    # Use custom `.gitignore` and `.gitattributes`
-    excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
-
-    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+	editor = $EDITOR
+	commitGraph = true
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
     # [default] trailing-space: looks for spaces at the end of a line
     # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-    # Make `git rebase` safer on OS X
+	whitespace=fix,space-before-tab,tab-in-indent,trailing-space,cr-at-eol
+	#  excludesfile = ~/.git.d/.gitignore
+	   # Use custom `.gitignore` and `.gitattributes`
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+	    # Make `git rebase` safer on OS X
     # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
     trustctime = false
 
@@ -129,10 +127,24 @@
 
     ignorecase = false
 
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
+
+[tag]
+	forceSignAnnotated = true
+
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
 [pager]
 	# insanely beautiful diffs ==> npm install -g diff-so-fancy
 	diff = diff-so-fancy | less --tabs=4 -RFX
 	show = diff-so-fancy | less --tabs=4 -RFX
+
+[color]
+	ui = true
 
 [color]
     # Use colors in Git commands that are capable of colored output when
@@ -165,18 +177,13 @@
     changed = green
     untracked = cyan
 
-[diff]
-    # Detect copies as well as renames
-    renames = copies
-
-[help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
+[include]
+	path = ~/.gitconfig.local
 
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-	tool = diff-so-fancy
+	tool = opendiff
 	renameLimit = 0
 
 [push]
@@ -187,11 +194,7 @@
     # Make `git push` push relevant annotated tags when pushing branches out.
     followTags = true
 
-[commit]
-  verbose = true
-
 # URL shorthands (rewrites of repo paths)
-
 [url "git@github.com:"]
     insteadOf = "https://github.com/"
     insteadOf = "gh:"
@@ -210,13 +213,13 @@
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
 
-# use separate file for username / github token / etc
-[include]
-    path = ~/.gitconfig.local
-
 [remote "origin"]
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [stash]
 	showPatch = true
 [log]
     date = relative
+	
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1

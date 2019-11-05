@@ -14,6 +14,22 @@ sudo softwareupdate -ia --verbose
 # Install only recommended available updates
 #sudo softwareupdate -ir --verbose
 
+# ###########################################################
+# /etc/hosts -- spyware/ad blocking
+# ###########################################################
+read -r -p "Overwrite /etc/hosts with the ad-blocking hosts file from someonewhocares.org? (from ./configs/hosts file) [y|N] " response
+if [[ $response =~ (yes|y|Y) ]];then
+    action "cp /etc/hosts /etc/hosts.backup"
+    sudo cp /etc/hosts /etc/hosts.backup
+    ok
+    action "cp ./configs/hosts /etc/hosts"
+    sudo cp ./configs/hosts /etc/hosts
+    ok
+    bot "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
+else
+    ok "skipped";
+fi
+
 echo "------------------------------"
 echo "Installing Xcode Command Line Tools."
 # Install Xcode command line tools
@@ -22,17 +38,6 @@ xcode-select --install
 # Install SDKMan
 #curl -s "https://get.sdkman.io" | bash
 #source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-echo "------------------------------"
-echo "Installing Oh My Bash"
-# Install Oh My Bash
-echo "Install oh-my-bash with the Pure theme"
-if [ ! -d "$BASH" ]; then
-    sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-else
-    echo "oh-my-bash is already installed. Skipping"
-fi
-sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 # change to bash 4 (installed by homebrew)
 #BASHPATH=$(brew --prefix)/bin/bash

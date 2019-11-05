@@ -46,7 +46,7 @@ brew install zsh # https://www.zsh.org/
 brew install zsh-completions # https://github.com/zsh-users/zsh-completions
 
 # Install Oh-My-Zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 
 # We installed the new shell, now we have to activate it
 echo_warn "Adding the newly installed shell to the list of allowed shells"
@@ -81,6 +81,7 @@ brew install sqlmap # http://sqlmap.org/
 echo_warn "Installing command line tools"
 brew install awscli # https://aws.amazon.com/cli/
 brew install bitwarden-cli # https://bitwarden.com/
+brew install diff-so-fancy # https://github.com/so-fancy/diff-so-fancy
 brew install docker # https://www.docker.com/
 brew install ffmpeg # https://ffmpeg.org/
 brew install git # https://git-scm.com/book/en/v1/Getting-Started-Installing-Git
@@ -88,13 +89,14 @@ brew install git-extras # https://github.com/tj/git-extras
 brew install httpie # https://httpie.org/
 brew install imagemagick --with-webp # https://imagemagick.org/
 brew install jq # https://stedolan.github.io/jq/
+brew install less # http://www.greenwoodsoftware.com/less/
 brew install openssh # https://www.openssh.com/
 brew install openssl # https://www.openssl.org/
 brew install pandoc # https://pandoc.org/
 brew install speedtest_cli # https://github.com/sivel/speedtest-cli
 brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
 brew install tree # http://mama.indstate.edu/users/ice/tree/
-brew install vim --override-system-vi
+brew install vim --override-system-vi # https://www.vim.org/
 brew install wine # https://www.winehq.org/
 brew install xpdf # https://www.xpdfreader.com/
 brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
@@ -185,5 +187,7 @@ brew install lolcat
 echo_warn "Cleaning up the cellar"
 # Remove outdated versions from the cellar.
 brew cleanup && brew cask cleanup
+
+rm -f -r /Library/Caches/Homebrew/* > /dev/null 2>&1
 
 echo_ok "BREW COMPLETE!"
