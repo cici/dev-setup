@@ -30,8 +30,6 @@ workon py2-data
 
 pip install boto
 pip install awscli
-# pip install mrjob
-# pip install s3cmd
 
 EXTRA_PATH=~/.extra
 echo $EXTRA_PATH
@@ -68,18 +66,9 @@ pip install awscli
 #echo "complete -C '~/.virtualenvs/py3-data/bin/aws_completer' aws" >> $EXTRA_PATH
 #source $EXTRA_PATH
 
-###############################################################################
-# System-Wide Packages                                                        #
-###############################################################################
 
-# Check for Homebrew,
-# Install if we don't have it
-if test ! $(which brew); then
-  echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-# Make sure we’re using the latest Homebrew.
-brew update
-
+echo "------------------------------"
+echo "TODO: Update .aws/ with your AWS credentials and region, or run aws --configure."
+echo "TODO: Update .mrjob.conf with your credentials, keypair, keypair location, region, and bucket info."
+echo "TODO: Update .s3cfg with your credentials, location, and passphrase or run s3cmd --configure."
 echo "Script completed."

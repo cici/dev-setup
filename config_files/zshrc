@@ -1,0 +1,57 @@
+ZSH_THEME="avit" # or use pygmalion
+
+plugins=(aws git docker-compose pip python brew osx zsh-syntax-highlighting zsh-autosuggestions)
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"
+export ZSH=~/.oh-my-zsh
+
+# Term
+export TERM='xterm-256color'
+
+# Default Editor
+export EDITOR=vim
+
+# Default Pager
+export PAGER='less'
+
+#export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*" --glob "!node_modules/*"'
+
+# Locale
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+
+[ -s "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#[ -f ~/.secrets ] && source ~/.secrets
+#[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#[ -f ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# aliases
+alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
+alias mv='mv --interactive --verbose' # Move nodes with interactive mode and extra verbosity.
+alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
+alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
+alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
+alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
+alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
+alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
+alias la='ls -l --almost-all --si' # List nodes with their details.
+alias v='vim'
+alias vc='nvim ~/.config/nvim/init.vim'
+alias zb='z -b'
+alias l='exa -lahF'
+alias find='fd'
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=121'
+
+# File search functions
+function f() { find . -iname "*$1*" ${@:2} }
+function r() { grep "$1" ${@:2} -R . }
+
+# Create a folder and move into it in one command
+function mkcd() { mkdir -p "$@" && cd "$_"; }
+

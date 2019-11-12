@@ -121,13 +121,18 @@ echo_warn "Installing fonts and font tools..."
 brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
-brew cask install font-fira-code
-brew cask install font-hack-nerd-font
-brew cask install font-hack-nerd-font-mono
-brew cask install font-inconsolata-nerd-font
-brew cask install font-inconsolata-nerd-font-mono
-brew cask install font-source-code-pro
 
+brew tap homebrew/cask-fonts
+fonts=(
+    font-fira-code
+    font-hack-nerd-font
+    font-hack-nerd-font-mono
+    font-inconsolata-nerd-font
+    font-inconsolata-nerd-font-mono
+    font-source-code-pro
+    font-roboto
+)
+brew cask install ${fonts[@]}
 
 
 # Install Docker, which requires virtualbox

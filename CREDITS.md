@@ -6,6 +6,13 @@ This repo builds on the awesome work from the following repos:
 * [dotfiles](https://github.com/mathiasbynens/dotfiles) by Mathias Bynens
 * [mac-dev-setup](https://github.com/nicolashery/mac-dev-setup) by Nicolas Hery
 
+## Credits
+[bin]: Upgrade script from https://github.com/kornicameister/dotfiles
+[exports, aliases, functions]  Idea from https://github.com/ajmalsiddiqui/dotfiles
+[huyvohcmc's dotfiles](https://github.com/huyvohcmc/dotfiles)
+[ashishb's dotfiles](https://github.com/ashishb/dotfiles)
+[nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/dotfiles)
+
 #### Image Credits
 
 * [Xcode](http://www.playfripp.com/wp-content/uploads/2012/12/xcode_command_line.jpg)

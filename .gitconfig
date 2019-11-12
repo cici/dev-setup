@@ -165,19 +165,17 @@
     changed = green
     untracked = cyan
 
-[diff]
-    # Detect copies as well as renames
-    renames = copies
-
-[help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
-
 [merge]
-    # Include summaries of merged commits in newly created merge commit messages
     log = true
-	tool = diff-so-fancy
-	renameLimit = 0
+    tool = diffmerge
+[mergetool "diffmerge"]
+    cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+    trustExitCode = false
+[diff]
+    tool = diffmerge
+[difftool "diffmerge"]
+    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+    prompt = false
 
 [push]
     # Use the Git 1.x.x default to avoid errors on machines with old Git
@@ -220,3 +218,6 @@
 	showPatch = true
 [log]
     date = relative
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1

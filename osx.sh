@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
 # ~/osx.sh — Originally from https://mths.be/osx
 
 # Ask for the administrator password upfront

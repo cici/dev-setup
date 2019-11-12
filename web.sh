@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
 # Install command-line tools using Homebrew.
 
 # Ask for the administrator password upfront.

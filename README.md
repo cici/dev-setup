@@ -1,11 +1,11 @@
-dev-setup
-============
+# [macOS Setup Guide](https://github.com/cici/dev-setup)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/repo-header.gif">
 </p>
 
-    $ ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"
+# Mac Setup
+> This is a conglomeration of many different resources I used to create my own standard of how to build out a new Mac used for development.  I am especially a fan of the GitBook style docs created by http://sourabhbajaj.com/mac-setup/, so I went with that as the basis of my own.
 
 ## Motivation
 
@@ -1806,32 +1806,6 @@ If you prefer to install it separately, you can download the JDK [here](http://w
     $ brew install caskroom/cask/brew-cask
     $ brew cask install --appdir="~/Applications" java
 
-### Android SDK
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/androidsdk.png">
-  <br/>
-</p>
-
-The [android.sh script](#androidsh-script) installs the Android SDK.
-
-If you prefer to install it separately, you can download it [here](https://developer.android.com/sdk/index.html).
-
-### Android Studio
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/androidstudio.png">
-  <br/>
-</p>
-
-The [android.sh script](#androidsh-script) installs Android Studio.
-
-If you prefer to install it separately, you can download it [here](https://developer.android.com/sdk/index.html) or run:
-
-    $ brew update
-    $ brew install caskroom/cask/brew-cask
-    $ brew cask install --appdir="~/Applications" android-studio
-
 ### IntelliJ IDEA
 
 <p align="center">
@@ -1851,19 +1825,25 @@ If you prefer to install it separately, you can download it [here](https://www.j
 
 ### Contributions
 
-Bug reports, suggestions, and pull requests are [welcome](https://github.com/donnemartin/dev-setup/issues)!
+Bug reports, suggestions, and pull requests are [welcome](https://github.com/cici/dev-setup/issues)!
 
 ### Credits
 
-See the [Credits Page](https://github.com/donnemartin/dev-setup/blob/master/CREDITS.md).
+See the [Credits Page](https://github.com/cici/dev-setup/blob/master/CREDITS.md).
 
 ## Contact Info
 
 Feel free to contact me to discuss any issues, questions, or comments.
 
-My contact info can be found on my [GitHub page](https://github.com/donnemartin).
+My contact info can be found on my [GitHub page](https://github.com/cici).
 
 ### License
+
+## License
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhuyvohcmc%2Fdotfiles.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhuyvohcmc%2Fdotfiles?ref=badge_large)
+
+This repository is available under the [MIT license](LICENSE). Feel free to fork and modify the dotfiles as you please.
 
 This repository contains a variety of content; some developed by Donne Martin, and some from third-parties.  The third-party content is distributed under the license provided by those parties.
 
