@@ -6,6 +6,19 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# Core Shortcuts
+alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
+alias mv='mv --interactive --verbose' # Move nodes with interactive mode and extra verbosity.
+alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
+alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
+alias mkdir='mkdir --parents' # Make missing parent directories when creating folders.
+alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
+alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
+alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
+alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
+alias la='ls -l --almost-all --si' # List nodes with their details.
+alias tmp='command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(whoami)' # Make temporary directory and cd into that.
+
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
@@ -49,6 +62,9 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
+# Brew updates only
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

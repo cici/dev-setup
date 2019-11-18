@@ -288,3 +288,12 @@ function localip(){
 		sed -r "s/Ethernet Address:/📘 /g" | \
 		sed -r "s/(VLAN Configurations)|==*//g"
 }
+
+function please() {
+  local CMD=$(history -1 | cut -d" " -f4-)
+  sudo "$CMD"
+}
+
+function weather() {
+  curl 'wttr.in/~'${1:-Braga}'+'$2'?'${3:-0}
+}

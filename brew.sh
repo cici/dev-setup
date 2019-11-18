@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Helper functions
 function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
@@ -83,6 +83,7 @@ brew install awscli # https://aws.amazon.com/cli/
 brew install bitwarden-cli # https://bitwarden.com/
 brew install diff-so-fancy # https://github.com/so-fancy/diff-so-fancy
 brew install docker # https://www.docker.com/
+brew install exa # https://the.exa.website/
 brew install ffmpeg # https://ffmpeg.org/
 brew install git # https://git-scm.com/book/en/v1/Getting-Started-Installing-Git
 brew install git-extras # https://github.com/tj/git-extras
@@ -95,6 +96,7 @@ brew install openssl # https://www.openssl.org/
 brew install pandoc # https://pandoc.org/
 brew install speedtest_cli # https://github.com/sivel/speedtest-cli
 brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
+brew install tmux # https://www.iterm2.com/documentation-tmux-integration.html
 brew install tree # http://mama.indstate.edu/users/ice/tree/
 brew install vim --override-system-vi # https://www.vim.org/
 brew install wine # https://www.winehq.org/
@@ -156,8 +158,7 @@ brew cask install gitter # https://gitter.im/explore/tags/homebrew
 brew cask install google-chrome # https://www.google.com/chrome/
 brew cask install handbrake # https://handbrake.fr/
 brew cask install intellij-idea-ce # https://www.jetbrains.com/idea/
-#brew cask install iterm2 # https://www.iterm2.com/
-brew cask install kitty # https://github.com/kovidgoyal/kitty
+brew cask install iterm2 # https://www.iterm2.com/
 brew cask install macdown # https://macdown.uranusjr.com/
 brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
 brew cask install postbox # https://www.postbox-inc.com/

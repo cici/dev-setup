@@ -1,11 +1,16 @@
+
 ZSH_THEME="avit" # or use pygmalion
 
 plugins=(aws git docker-compose pip python brew osx zsh-syntax-highlighting zsh-autosuggestions)
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export ZSH=~/.oh-my-zsh
+
+export DOTFILES="$HOME/.dotfiles"
+source $DOTFILES/zsh/plugins.zsh
+source $DOTFILES/zsh/theme.zsh
+source $DOTFILES/zsh/aliases.zsh
+source $DOTFILES/zsh/functions.zsh
 
 # Term
 export TERM='xterm-256color'
@@ -44,6 +49,7 @@ alias v='vim'
 alias vc='nvim ~/.config/nvim/init.vim'
 alias zb='z -b'
 alias l='exa -lahF'
+alias la="exa -abghl --git --color=automatic"
 alias find='fd'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=121'
@@ -55,3 +61,17 @@ function r() { grep "$1" ${@:2} -R . }
 # Create a folder and move into it in one command
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
+# Shell options
+setopt NO_CASE_GLOB # Case Insensitive Globbing
+setopt AUTO_CD # If command can't be executed, and command is name of a directory, cd to directory
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+setopt EXTENDED_HISTORY # larger history size
+SAVEHIST=5000
+HISTSIZE=2000
+setopt SHARE_HISTORY # share history across multiple zsh sessions
+setopt APPEND_HISTORY # append to history
+setopt INC_APPEND_HISTORY # adds commands as they are typed, not at shell exit
+setopt HIST_IGNORE_DUPS # do not store duplications
+setopt HIST_VERIFY # show the substituted command in the prompt
+
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '

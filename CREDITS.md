@@ -12,6 +12,7 @@ This repo builds on the awesome work from the following repos:
 [huyvohcmc's dotfiles](https://github.com/huyvohcmc/dotfiles)
 [ashishb's dotfiles](https://github.com/ashishb/dotfiles)
 [nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/dotfiles)
+[nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/spells)
 
 #### Image Credits
 
