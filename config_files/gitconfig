@@ -20,6 +20,10 @@
 
     # Commit all changes
     ca = !git add -A && git commit -av
+    cam = commit -am
+
+    # Push to master
+    pom = push origin master
 
     # Switch to a branch, creating it if necessary
     go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -107,7 +111,8 @@
 	gpgsign = true
 
 [core]
-	editor = $EDITOR
+	editor = code --wait
+    autocrlf = input
 	commitGraph = true
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
     # [default] trailing-space: looks for spaces at the end of a line
@@ -229,3 +234,6 @@
 
 [gitlab]
     user = cici_sleestak
+
+[credential]
+    helper = osxkeychain

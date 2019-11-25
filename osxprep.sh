@@ -7,31 +7,28 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Step 1: Update the OS and Install Xcode Tools
-echo "------------------------------"
-echo "Updating OSX.  If this requires a restart, run the script again."
+log_info "------------------------------"
+log_info "Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
 sudo softwareupdate -ia --verbose
-# Install only recommended available updates
-#sudo softwareupdate -ir --verbose
+
 
 # ###########################################################
 # /etc/hosts -- spyware/ad blocking
 # ###########################################################
-read -r -p "Overwrite /etc/hosts with the ad-blocking hosts file from someonewhocares.org? (from ./configs/hosts file) [y|N] " response
+read -r -p "Overwrite /etc/hosts with the ad-blocking hosts file from someonewhocares.org? (from ../config_files/hosts file) [y|N] " response
 if [[ $response =~ (yes|y|Y) ]];then
-    action "cp /etc/hosts /etc/hosts.backup"
+    log_warn "cp /etc/hosts /etc/hosts.backup"
     sudo cp /etc/hosts /etc/hosts.backup
-    ok
-    action "cp ./configs/hosts /etc/hosts"
+    log_warn "cp ../config_files/hosts /etc/hosts"
     sudo cp ./configs/hosts /etc/hosts
-    ok
-    bot "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
+    log_info "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
-    ok "skipped";
+    log_info "skipped";
 fi
 
-echo "------------------------------"
-echo "Installing Xcode Command Line Tools."
+log_info "------------------------------"
+log_info "Installing Xcode Command Line Tools."
 # Install Xcode command line tools
 xcode-select --install
 
@@ -39,14 +36,9 @@ xcode-select --install
 #curl -s "https://get.sdkman.io" | bash
 #source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# change to bash 4 (installed by homebrew)
-#BASHPATH=$(brew --prefix)/bin/bash
-#sudo echo $BASHPATH >> /etc/shells
-#sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
-#chsh -s $BASHPATH # will set for current user only.
-#echo $BASH_VERSION # should be 4.x not the old 3.2.X
-
-echo "------------------------------"
-echo "Create an SSH key for Github, Gitlab and whatever else"
+log_info "------------------------------"
+log_info "Create an SSH key for Github, Gitlab and whatever else"
 # Create SSH key
 ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"
+
+log_info "OSX prep completed!"

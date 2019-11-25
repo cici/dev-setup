@@ -13,6 +13,8 @@ This repo builds on the awesome work from the following repos:
 [ashishb's dotfiles](https://github.com/ashishb/dotfiles)
 [nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/dotfiles)
 [nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/spells)
+[michaeljsmalley's dotfiles](https://github.com/michaeljsmalley/dotfiles)
+[fehawen's dotfiles](https://github.com/fehawen/dotfiles)
 
 #### Image Credits
 

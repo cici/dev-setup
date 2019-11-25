@@ -71,6 +71,10 @@
 127.0.0.1	localhost.localdomain
 255.255.255.255	broadcasthost
 ::1		localhost
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
 127.0.0.1	local
 ::1		ip6-localhost ip6-loopback
 fe00::0		ip6-localnet

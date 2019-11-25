@@ -44,6 +44,8 @@ brew install findutils # https://www.gnu.org/software/findutils/
 echo_warn "Installing zsh and Oh-My-Zsh"
 brew install zsh # https://www.zsh.org/
 brew install zsh-completions # https://github.com/zsh-users/zsh-completions
+brew install zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+brew install zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
@@ -77,9 +79,22 @@ brew install bfg  # https://rtyley.github.io/bfg-repo-cleaner/
 brew install nmap # https://nmap.org/
 brew install sqlmap # http://sqlmap.org/
 
+# Brew Taps
+echo_warn "Tapping some casks..."
+brew tap bramstein/webfonttools
+brew tap heroku/brew
+brew tap homebrew/cask
+brew tap homebrew/cask-cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
+brew tap homebrew/core
+brew tap homebrew/services
+brew tap wtfutil/wtfutil
+
 # Install other useful binaries.
 echo_warn "Installing command line tools"
 brew install awscli # https://aws.amazon.com/cli/
+brew install bat # https://github.com/sharkdp/bat
 brew install bitwarden-cli # https://bitwarden.com/
 brew install diff-so-fancy # https://github.com/so-fancy/diff-so-fancy
 brew install docker # https://www.docker.com/
@@ -91,6 +106,7 @@ brew install httpie # https://httpie.org/
 brew install imagemagick --with-webp # https://imagemagick.org/
 brew install jq # https://stedolan.github.io/jq/
 brew install less # http://www.greenwoodsoftware.com/less/
+brew install denisidoro/tools/navi # https://github.com/denisidoro/navi
 brew install openssh # https://www.openssh.com/
 brew install openssl # https://www.openssl.org/
 brew install pandoc # https://pandoc.org/
@@ -100,23 +116,13 @@ brew install tmux # https://www.iterm2.com/documentation-tmux-integration.html
 brew install tree # http://mama.indstate.edu/users/ice/tree/
 brew install vim --override-system-vi # https://www.vim.org/
 brew install wine # https://www.winehq.org/
+brew install wtfutil # https://wtfutil.com/
 brew install xpdf # https://www.xpdfreader.com/
 brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
 
 # Install Heroku
 brew install heroku/brew/heroku
 heroku update
-
-# Brew Taps
-echo_warn "Tapping some casks..."
-brew tap bramstein/webfonttools
-brew tap heroku/brew
-brew tap homebrew/cask
-brew tap homebrew/cask-cask
-brew tap homebrew/cask-fonts
-brew tap homebrew/cask-versions
-brew tap homebrew/core
-brew tap homebrew/services
 
 # Install fonts
 echo_warn "Installing fonts and font tools..."
