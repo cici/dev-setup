@@ -1,0 +1,48 @@
+# Make vim the default editor.
+export EDITOR='vim';
+
+# SSH keypath
+export SSH_KEY_PATH=$HOME/.ssh/id_rsa
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export ZSH=~/.oh-my-zsh
+export ZSH_CUSTOM=~/.oh-my-zsh/custom
+
+# Project Directories
+export DOTFILES="${HOME}/.dotfiles"
+export PROJECTS="${HOME}/Projects"
+export WORK="${HOME}/Projects/Slalom"
+
+# Locale
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+
+# Programming language exports
+export PYENV_ROOT="$HOME/.pyenv"
+
+# Only allow pip to run if inside a virtualenv
+export PIP_REQUIRE_VIRTUALENV=true
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}";
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+# Default Pager
+export PAGER='less'
+
+# Term
+export TERM='xterm-256color'
+
+# Always enable colored `grep` output.
+export GREP_OPTIONS='--color=auto';
+
+# Homebrew defaults
+export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-"/usr/local"}
+export HOMEBREW_CELLAR=${HOMEBREW_CELLAR:-"/usr/local/Cellar"}
+export HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local/Homebrew"}
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+#export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*" --glob "!node_modules/*"'

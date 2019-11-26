@@ -13,6 +13,11 @@ DOTFILES=$HOME/.dotfiles
 # Include the log helpers and banner
 source ./log_utils.sh
 
+downloadInstallScript() {
+    log_info "Getting code from Github"
+    curl --remote-name https://raw.githubusercontent.com/cici/dev-setup/master/install.sh && sh install.sh 2>&1 | tee ~/bootstrap.log
+}
+
 installFonts() {
     log_info "Installing Fonts"
 
@@ -59,7 +64,7 @@ else
                 shift
                 ;;
             -i|--install)
-                doInstall
+                downloadInstallScript
                 shift
                 ;;
             -f|--fonts)

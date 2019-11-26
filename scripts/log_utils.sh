@@ -3,7 +3,9 @@
 # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
 set -Eueo pipefail
 
-SETUP_DIR="$HOME/Documents/Projects/dev-setup"
+# Set some environment variables
+SETUP_DIR="$HOME/Projects/dev-setup"
+HOMEBREW_PREFIX="/usr/local"
 
 tput sgr0
 RED=$(tput setaf 1)

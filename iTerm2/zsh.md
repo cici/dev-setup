@@ -15,9 +15,7 @@ Install `zsh` using Homebrew:
 $ brew install zsh
 ```
 
-Now you should install a framework, we recommend to use [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
-or [Prezto](https://github.com/sorin-ionescu/prezto). **Note that you should
-pick one of them, not use both.**
+Now you should install a framework, we recommend to use [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh).
 
 The configuration file for `zsh` is called `.zshrc` and lives in your home
 folder (`~/.zshrc`).
@@ -80,44 +78,6 @@ ZSH_THEME=pygmalion
 You'll find a list of themes with screenshots on the
 [Oh My Zsh Wiki](https://github.com/robbyrussell/oh-my-zsh/wiki/themes).
 
-
-### Modules
-
-Add modules to Prezto by editing `~/.zpreztorc` and adding the modules as
-strings to the list:
-
-```sh
-zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'git' \
-  'syntax-highlighting' \
-  'history-substring-search' \
-  'prompt'
-```
-
-And don't forget to apply your changes by **starting a new shell instance**.
-
-### Themes
-
-To list all available themes run:
-
-```sh
-$ prompt -l
-```
-
-Then open up your config file (`~/.zpreztorc`) and change to the theme you want:
-
-```sh
-zstyle ':prezto:module:prompt' theme 'minimal'
-```
-
 ## `env.sh`
 
 To include `env.sh`, open `~/.zshrc` and add the following:
@@ -147,6 +107,5 @@ function r() { grep "$1" ${@:2} -R . }
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # Example aliases
-alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias g='git'
 ```

@@ -6,14 +6,6 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(aws git git-flow docker docker-compose pip python brew osx npm virtualenv virtualenvwrapper)
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export ZSH=~/.oh-my-zsh
-export ZSH_CUSTOM=~/.oh-my-zsh/custom
-
-# Project Directories
-export DOTFILES="${HOME}/.dotfiles"
-export PROJECTS="${HOME}/Projects"
-export WORK="${HOME}/Projects/Slalom"
 
 # Additional scripts
 source $DOTFILES/zsh/plugins.zsh
@@ -24,29 +16,6 @@ source $DOTFILES/zsh/functions.zsh
 # Make sure navi is loaded for zsh
 source "$(navi widget zsh)"
 
-# Term
-export TERM='xterm-256color'
-
-# Only allow pip to run if inside a virtualenv
-export PIP_REQUIRE_VIRTUALENV=true
-
-# Default Editor
-export EDITOR=vim
-
-# Default Pager
-export PAGER='less'
-
-#export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*" --glob "!node_modules/*"'
-
-# Locale
-export LANG='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
-export LANGUAGE='en_US.UTF-8'
-
-# Homebrew defaults
-export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-"/usr/local"}
-export HOMEBREW_CELLAR=${HOMEBREW_CELLAR:-"/usr/local/Cellar"}
-export HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local/Homebrew"}
 
 # source $ZSH/oh-my-zsh.sh
 [ -s "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"

@@ -10,20 +10,7 @@ info() {
     printf "\033[00;34m$@\033[0m\n"
 }
 
-usage() {
-    echo "Usage: $(basename "$0") [options]" >&2
-    echo
-    echo "   -s, --sync            Synchronizes dotfiles to home directory"
-    echo "   -l, --link            Create symbolic links"
-    echo "   -i, --install          Install (extra) software"
-    echo "   -f, --fonts            Copies font files"
-    echo "   -c, --config           Configures your system"
-    echo "   -a, --all               Does all of the above"
-    echo
-    exit 1
-}
 
-: '
 function doIt() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
         --exclude "README.md" --exclude "LICENSE" -avh --no-perms . ~;
@@ -62,43 +49,3 @@ install_git_app() {
   fi
 }
 export -f install_git_app
-
-# Main Program
-if [ $# -eq 0 ]; then
-    usage
-else
-    for i in "$@"
-    do
-        case $i in
-            -s|--sync)
-                doSync
-                doGitConfig
-                shift
-                ;;
-            -l|--link)
-                doSymLink
-                shift
-                ;;
-            -i|--install)
-                doInstall
-                shift
-                ;;
-            -f|--fonts)
-                installFonts
-                shift
-                ;;
-            -c|--config)
-                doConfig
-                shift
-                ;;
-            -a|--all)
-                installAll
-                shift
-                ;;
-            *)
-                usage
-                shift
-                ;;
-        esac
-    done
-fi
