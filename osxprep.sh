@@ -40,5 +40,6 @@ log_info "------------------------------"
 log_info "Create an SSH key for Github, Gitlab and whatever else"
 # Create SSH key
 ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"
+log_warn "Please copy the ssh key into Github and Gitlab"
 
 log_info "OSX prep completed!"
