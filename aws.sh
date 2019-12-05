@@ -4,16 +4,16 @@
 
 # Removed user's cached credentials
 # This script might be run with .dots, which uses elevated privileges
-sudo -K
+sudo -v
 
-echo "------------------------------"
-echo "Setting up AWS."
-echo "This script requires pip and virtualenvwrapper to be installed."
-echo "See the pydata.sh script."
+log_info "------------------------------"
+log_info "Setting up AWS."
+log_info "This script requires pip and virtualenvwrapper to be installed."
+log_info "See the pydata.sh script."
 
-echo "------------------------------"
-echo "Source virtualenvwrapper from ~/.extra"
-source ~/.extra
+log_info "------------------------------"
+log_info "Source virtualenvwrapper from ~/.extra"
+log_info ~/.extra
 
 ###############################################################################
 # Python 2 Virtual Enviroment                                                 #

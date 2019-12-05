@@ -65,6 +65,7 @@ brew install wget --with-iri # https://www.gnu.org/software/wget/
 echo_warn "Installing development languages..."
 brew install gradle # https://gradle.org/
 brew cask install java
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 brew install node # https://nodejs.org/en/
 brew install python3
 brew install ruby

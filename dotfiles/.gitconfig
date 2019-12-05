@@ -118,6 +118,7 @@
 
 [core]
     # Use custom `.gitignore` and `.gitattributes`
+    editor = vim
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
 
@@ -144,7 +145,15 @@
 [color]
     # Use colors in Git commands that are capable of colored output when
     # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-    ui = auto
+    ui = always
+    branch = always
+    diff = always
+    interactive = always
+    status = always
+    grep = always
+    pager = true
+    decorate = always
+    showbranch = always
 
 [color "branch"]
     current = yellow reverse
@@ -225,6 +234,8 @@
 	showPatch = true
 [log]
     date = relative
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 [help]
     # Automatically correct and execute mistyped commands
     autocorrect = 1

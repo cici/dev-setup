@@ -4,10 +4,10 @@
 
 # Removed user's cached credentials
 # This script might be run with .dots, which uses elevated privileges
-sudo -K
+sudo -v
 
-echo "------------------------------"
-echo "Setting up pip."
+log_info "------------------------------"
+log_info "Setting up pip."
 
 # Download and install pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -17,8 +17,8 @@ python get-pip.py
 # Virtual Enviroments                                                         #
 ###############################################################################
 
-echo "------------------------------"
-echo "Setting up virtual environments."
+log_info "------------------------------"
+log_info "Setting up virtual environments."
 
 # Install virtual environments globally
 # It fails to install virtualenv if PIP_REQUIRE_VIRTUALENV was true
@@ -32,17 +32,17 @@ pyenv global 3.8.0
 #pip install virtualenv
 #pip install virtualenvwrapper
 
-echo "------------------------------"
-echo "Source virtualenvwrapper from ~/.extra"
+log_info "------------------------------"
+log_info "Source virtualenvwrapper from ~/.extra"
 
 EXTRA_PATH=~/.extra
-echo $EXTRA_PATH
-echo "" >> $EXTRA_PATH
-echo "" >> $EXTRA_PATH
-echo "# Source virtualenvwrapper, added by pydata.sh" >> $EXTRA_PATH
-echo "export WORKON_HOME=~/.virtualenvs" >> $EXTRA_PATH
-echo "source /usr/local/bin/virtualenvwrapper.sh" >> $EXTRA_PATH
-echo "" >> $BASH_PROFILE_PATH
+log_info $EXTRA_PATH
+log_info "" >> $EXTRA_PATH
+log_info "" >> $EXTRA_PATH
+log_info "# Source virtualenvwrapper, added by pydata.sh" >> $EXTRA_PATH
+log_info "export WORKON_HOME=~/.virtualenvs" >> $EXTRA_PATH
+log_info "source /usr/local/bin/virtualenvwrapper.sh" >> $EXTRA_PATH
+log_info "" >> $BASH_PROFILE_PATH
 source $EXTRA_PATH
 
 
@@ -50,8 +50,8 @@ source $EXTRA_PATH
 # Python 3 Virtual Enviroment                                                 #
 ###############################################################################
 
-echo "------------------------------"
-echo "Setting up py3-data virtual environment."
+log_info "------------------------------"
+log_info "Setting up py3-data virtual environment."
 
 # Create a Python3 data environment
 mkvirtualenv --python=/usr/local/bin/python3 py3-data
@@ -80,13 +80,13 @@ pip install glances  # https://nicolargo.github.io/glances/
 # Install IPython Profile
 ###############################################################################
 
-echo "------------------------------"
-echo "Installing IPython Notebook Default Profile"
+log_info "------------------------------"
+log_info "Installing IPython Notebook Default Profile"
 
 # Add the IPython profile
 mkdir -p ~/.ipython
 cp -r init/profile_default/ ~/.ipython/profile_default
 
-echo "------------------------------"
-echo "Script completed."
-echo "Usage: workon py3-data for Python3"
+log_info "------------------------------"
+log_info "Script completed."
+log_info "Usage: workon py3-data for Python3"
