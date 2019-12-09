@@ -20,10 +20,10 @@ COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
 function ok() {
-    echo -e "$COL_GREEN[ok]$COL_RESET "$1
+    echo "$COL_GREEN[ok]$COL_RESET "$1
 }
 
-ok
+ok hello
 
 tput sgr0
 RED=$(tput setaf 1)

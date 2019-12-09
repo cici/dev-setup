@@ -27,7 +27,20 @@ for file in $files; do
     mv ~/.$file ~/dotfiles_old/
     log_info "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
+    # ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 done
+
+install_dotfiles () {
+  info 'installing dotfiles'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+}
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:

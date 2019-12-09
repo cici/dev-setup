@@ -90,3 +90,5 @@ cp -r init/profile_default/ ~/.ipython/profile_default
 log_info "------------------------------"
 log_info "Script completed."
 log_info "Usage: workon py3-data for Python3"
+
+pip install glances

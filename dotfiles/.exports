@@ -19,6 +19,7 @@ export LC_ALL='en_US.UTF-8'
 export LANGUAGE='en_US.UTF-8'
 
 # Programming language exports
+export JAVA_HOME=$(/usr/libexec/java_home)
 export PYENV_ROOT="$HOME/.pyenv"
 
 # Only allow pip to run if inside a virtualenv
@@ -46,3 +47,20 @@ export HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local/Homebrew"}
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*" --glob "!node_modules/*"'
+
+if [ -n "$JAVA_HOME" ]; then
+  export JDK_HOME=$JAVA_HOME
+  export JRE_HOME=$JAVA_HOME
+  export PATH="$JAVA_HOME/bin:$PATH"
+fi
+
+# lazy add M2_HOME
+if [ -d "/opt/maven" ]; then
+  export M2_HOME="/opt/maven"
+fi
+if [ -d "/usr/share/maven" ]; then
+  export M2_HOME="/usr/share/maven"
+fi
+if [ -n "$M2_HOME" ]; then
+  export PATH="$M2_HOME/bin:$PATH"
+fi

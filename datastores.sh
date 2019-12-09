@@ -22,6 +22,10 @@ brew update
 # Install data stores
 brew install mysql
 brew services start mysql
+
+# Set default MySQL root password and auth type.
+mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+
 #brew install postgresql
 brew install mongo
 brew install redis

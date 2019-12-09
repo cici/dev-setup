@@ -11,7 +11,7 @@ log_info "------------------------------"
 log_info "Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
 sudo softwareupdate -ia --verbose
-
+ok
 
 # ###########################################################
 # /etc/hosts -- spyware/ad blocking
@@ -22,20 +22,42 @@ if [[ $response =~ (yes|y|Y) ]];then
     sudo cp /etc/hosts /etc/hosts.backup
     log_warn "cp ../config_files/hosts /etc/hosts"
     sudo cp ./configs/hosts /etc/hosts
-    log_info "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
+    ok
+    bot "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
     log_info "skipped";
 fi
 
-log_info "------------------------------"
-log_info "Installing Xcode Command Line Tools."
-# Install Xcode command line tools
-xcode-select --install
+# ###########################################################
+# Installing Xcode command line tools
+# ###########################################################
+bot "ensuring build/install tools are available"
+if ! xcode-select --print-path &> /dev/null; then
+
+    # Prompt user to install the XCode Command Line Tools
+    xcode-select --install &> /dev/null
+
+    # Wait until the XCode Command Line Tools are installed
+    until xcode-select --print-path &> /dev/null; do
+        sleep 5
+    done
+
+    print_result $? ' XCode Command Line Tools Installed'
+
+    # Prompt user to agree to the terms of the Xcode license
+    # https://github.com/alrra/dotfiles/issues/10
+
+    sudo xcodebuild -license
+    print_result $? 'Agree with the XCode Command Line Tools licence'
+fi
 
 # Install SDKMan
 #curl -s "https://get.sdkman.io" | bash
 #source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# ###########################################################
+# Create SSH key
+# ###########################################################
 log_info "------------------------------"
 log_info "Create an SSH key for Github, Gitlab and whatever else"
 # Create SSH key

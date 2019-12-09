@@ -92,13 +92,20 @@ brew tap homebrew/core
 brew tap homebrew/services
 brew tap wtfutil/wtfutil
 
+# Install infrastructure tools
+brew cask install docker
+brew install docker # https://www.docker.com/
+brew install mysql # https://www.mysql.com
+brew install docker-compose
+brew install docker-completion
+brew install docker-compose-completion
+
 # Install other useful binaries.
 echo_warn "Installing command line tools"
 brew install awscli # https://aws.amazon.com/cli/
 brew install bat # https://github.com/sharkdp/bat
 brew install bitwarden-cli # https://bitwarden.com/
 brew install diff-so-fancy # https://github.com/so-fancy/diff-so-fancy
-brew install docker # https://www.docker.com/
 brew install exa # https://the.exa.website/
 brew install ffmpeg # https://ffmpeg.org/
 brew install git # https://git-scm.com/book/en/v1/Getting-Started-Installing-Git
@@ -113,9 +120,11 @@ brew install openssl # https://www.openssl.org/
 brew install pandoc # https://pandoc.org/
 brew install speedtest_cli # https://github.com/sivel/speedtest-cli
 brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
+brew install thefuck # https://github.com/nvbn/thefuck
 brew install tmux # https://www.iterm2.com/documentation-tmux-integration.html
 brew install tree # http://mama.indstate.edu/users/ice/tree/
 brew install vim --override-system-vi # https://www.vim.org/
+brew install watch
 brew install wine # https://www.winehq.org/
 brew install wtfutil # https://wtfutil.com/
 brew install xpdf # https://www.xpdfreader.com/
@@ -142,11 +151,6 @@ fonts=(
     font-roboto
 )
 brew cask install ${fonts[@]}
-
-
-# Install Docker, which requires virtualbox
-brew install docker
-brew install boot2docker
 
 echo_warn "Installing graphical tools"
 brew cask install 1password # https://1password.com/

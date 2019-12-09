@@ -3,6 +3,7 @@
 set -euo pipefail
 # ~/osx.sh — Originally from https://mths.be/osx
 
+COMPUTERNAME=MacCiCi
 # Ask for the administrator password upfront
 sudo -v
 
@@ -14,10 +15,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MacCiCi"
-sudo scutil --set HostName "MacCiCi"
-sudo scutil --set LocalHostName "MacCiCi"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MacCiCi"
+sudo scutil --set ComputerName $COMPUTERNAME
+sudo scutil --set HostName $COMPUTERNAME
+sudo scutil --set LocalHostName $COMPUTERNAME
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTERNAME
 
 # Set standby delay to 24 hours (default is 1 hour or 3600)
 #sudo pmset -a standbydelay 86400
@@ -40,6 +41,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/Battery.menu" \
     "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
+defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d H.mm"
 # Set highlight color to green
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 

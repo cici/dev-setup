@@ -11,10 +11,15 @@ This repo builds on the awesome work from the following repos:
 [exports, aliases, functions]  Idea from https://github.com/ajmalsiddiqui/dotfiles
 [huyvohcmc's dotfiles](https://github.com/huyvohcmc/dotfiles)
 [ashishb's dotfiles](https://github.com/ashishb/dotfiles)
+[holman's dotfiles](https://github.com/holman/dotfiles)
 [nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/dotfiles)
-[nelsonmestevao's dotfiles](https://github.com/nelsonmestevao/spells)
+[paulmillr's dotfiles](https://github.com/paulmillr/dotfiles)
 [michaeljsmalley's dotfiles](https://github.com/michaeljsmalley/dotfiles)
 [fehawen's dotfiles](https://github.com/fehawen/dotfiles)
+[atomantic's dotfiles](https://github.com/atomantic/dotfiles)
+[sapegin's dotfiles](https://github.com/sapegin/dotfiles)
+[statico's dotfiles](https://github.com/statico/dotfiles)
+
 
 #### Image Credits
 

@@ -12,6 +12,7 @@ DOTFILES=$HOME/.dotfiles
 
 # Include the log helpers and banner
 source ./log_utils.sh
+source ./echos.sh
 
 downloadInstallScript() {
     log_info "Getting code from Github"
@@ -33,12 +34,12 @@ installFonts() {
 
 prepOS() {
     log_info "Updating OSX and installing Xcode command line tools"
-    ./osxprep.sh
+    #./osxprep.sh
 }
 
 configureOS() {
-    log_info "Configuring OSX with preferred system defaults"
-    ./osx.sh
+    bot "Configuring OSX with preferred system defaults"
+    #./osx.sh
 }
 
 # Main Program
@@ -55,7 +56,6 @@ else
                 shift
                 ;;
             -s|--sync)
-                doSync
                 doGitConfig
                 shift
                 ;;
