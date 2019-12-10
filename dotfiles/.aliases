@@ -35,6 +35,13 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 
+# Trying out exa, a fancy replacement for ls
+if _has exa ; then
+  alias ls=exa
+  alias l='ls -lg'
+  alias ltr='exa -lgr -sold'
+fi
+
 alias python="python3"
 alias pip="pip3"
 
@@ -183,6 +190,8 @@ alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
 alias diskspace_report="df -P -kHl"
 alias free_diskspace_report="diskspace_report"
+
+alias strace='sudo dtruss -f sudo -u $USER'
 
 ###
 # GIT STUFF
