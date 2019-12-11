@@ -4,15 +4,16 @@
 set -Eueo pipefail
 
 # Set some environment variables
-SETUP_DIR="$HOME/Projects/dev-setup"
+SETUP_DIR="$HOME/Documents/Projects/dev-setup"
 HOMEBREW_PREFIX="/usr/local"
 
 tput sgr0
 RED=$(tput setaf 1)
 ORANGE=$(tput setaf 3)
-GREEN=$(tput setaf 2)
+GREEN=$( tput setaf 2)
 PURPLE=$(tput setaf 5)
 BLUE=$(tput setaf 4)
+LTBLUE=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
@@ -37,7 +38,11 @@ log_error() {
 }
 
 log_info() {
-  log "INFO" "$ORANGE" "$@"
+  log "INFO" "$LTBLUE" "$@"
+}
+
+log_warn() {
+  log "WARN" "$ORANGE" "$@"
 }
 
 log_success() {
@@ -77,13 +82,15 @@ EOF
 usage() {
     echo "Usage: $(basename "$0") [options]" >&2
     echo
-    echo "   -s, --sync            Synchronizes dotfiles to home directory"
-    echo "   -l, --link            Create symbolic links for dotfiles"
-    echo "   -i, --install         Install Homebrew and applications"
-    echo "   -p, --program         Install Programming resources"
-    echo "   -f, --fonts           Installs font files"
+    echo "Recommended order for first run:  (or use all)"
+    echo "   -p, --prep            Updates OSX and installs XCode command line tools"
     echo "   -c, --config          Configures OSX"
+    echo "   -s, --sync            Synchronizes dotfiles to home directory and creates symbolic links"
+    echo "   -l, --lang            Programming language support (Java, Python 3, Node)"
+    echo "   -i, --install         Install Homebrew and applications"
+    echo "   -f, --fonts           Installs font files"
     echo "   -a, --all             Does all of the above"
+    echo "   -h, --help            Returns this menu"
     echo
     exit 1
 }

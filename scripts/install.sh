@@ -38,7 +38,7 @@ prepOS() {
 }
 
 configureOS() {
-    bot "Configuring OSX with preferred system defaults"
+    log_info "Configuring OSX with preferred system defaults"
     #./osx.sh
 }
 
@@ -51,37 +51,41 @@ else
     for i in "$@"
     do
         case $i in
-            -pr--prep)
+            -p | --prep)
                 prepOS
                 shift
                 ;;
-            -s|--sync)
+            -s | --sync)
                 doGitConfig
                 shift
                 ;;
-            -l|--link)
+            -l | --link)
                 doSymLink
                 shift
                 ;;
-            -i|--install)
+            -i | --install)
                 downloadInstallScript
                 shift
                 ;;
-            -f|--fonts)
+            -f | --fonts)
                 installFonts
                 shift
                 ;;
-            -c|--config)
-                configureOS
+            -c | --config)
+               configureOS
                 shift
                 ;;
-            -a|--all)
+            -a | --all)
                 installAll
                 shift
                 ;;
+            -h | --help)
+                usage
+                exit
+                ;;
             *)
                 usage
-                shift
+                exit 1
                 ;;
         esac
     done
