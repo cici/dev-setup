@@ -7,7 +7,6 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Step 1: Update the OS and Install Xcode Tools
-log_info "------------------------------"
 log_info "Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
 sudo softwareupdate -ia --verbose
@@ -23,15 +22,15 @@ if [[ $response =~ (yes|y|Y) ]];then
     log_warn "cp ../config_files/hosts /etc/hosts"
     sudo cp ./configs/hosts /etc/hosts
     ok
-    bot "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
+    log_info "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
-    log_info "skipped";
+    log_info "Not updating hosts file";
 fi
 
 # ###########################################################
 # Installing Xcode command line tools
 # ###########################################################
-bot "ensuring build/install tools are available"
+log_info "Ensuring build/install tools are available"
 if ! xcode-select --print-path &> /dev/null; then
 
     # Prompt user to install the XCode Command Line Tools
@@ -42,13 +41,11 @@ if ! xcode-select --print-path &> /dev/null; then
         sleep 5
     done
 
-    print_result $? ' XCode Command Line Tools Installed'
-
     # Prompt user to agree to the terms of the Xcode license
     # https://github.com/alrra/dotfiles/issues/10
-
     sudo xcodebuild -license
-    print_result $? 'Agree with the XCode Command Line Tools licence'
+
+    log_info "XCode Command Line Tools Installed"
 fi
 
 # Install SDKMan
@@ -58,7 +55,6 @@ fi
 # ###########################################################
 # Create SSH key
 # ###########################################################
-log_info "------------------------------"
 log_info "Create an SSH key for Github, Gitlab and whatever else"
 # Create SSH key
 ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"

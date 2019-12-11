@@ -620,3 +620,26 @@ gc() {
 _has() {
   return $( whence $1 &>/dev/null )
 }
+
+function send-sms() {
+  curl -X POST https://textbelt.com/text \
+       --data-urlencode phone="$1" \
+       --data-urlencode message="$2" \
+       -d key=textbelt
+}
+
+function please() {
+  local CMD=$(history -1 | cut -d" " -f4-)
+  sudo "$CMD"
+}
+
+function psgrep() {
+  ps auxf | grep -v grep | grep "$@" -i
+}
+
+# Cleans work path for temporary processing of installs.
+function clean_work_path() {
+  rm -rf "$MAC_OS_WORK_PATH"
+}
+
+export -f clean_work_path
