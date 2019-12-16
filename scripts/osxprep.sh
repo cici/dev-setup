@@ -3,13 +3,16 @@
 # Ask for the administrator password upfront
 sudo -v
 
+source ./log_utils.sh
+source ./echos.sh
+
 # Keep-alive: update existing `sudo` time stamp until `osxprep.sh` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Step 1: Update the OS and Install Xcode Tools
 log_info "Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
-sudo softwareupdate -ia --verbose
+#sudo softwareupdate -ia --verbose
 ok
 
 # ###########################################################
@@ -18,9 +21,9 @@ ok
 read -r -p "Overwrite /etc/hosts with the ad-blocking hosts file from someonewhocares.org? (from ../config_files/hosts file) [y|N] " response
 if [[ $response =~ (yes|y|Y) ]];then
     log_warn "cp /etc/hosts /etc/hosts.backup"
-    sudo cp /etc/hosts /etc/hosts.backup
+    #sudo cp /etc/hosts /etc/hosts.backup
     log_warn "cp ../config_files/hosts /etc/hosts"
-    sudo cp ./configs/hosts /etc/hosts
+    #sudo cp ./configs/hosts /etc/hosts
     ok
     log_info "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
@@ -34,16 +37,16 @@ log_info "Ensuring build/install tools are available"
 if ! xcode-select --print-path &> /dev/null; then
 
     # Prompt user to install the XCode Command Line Tools
-    xcode-select --install &> /dev/null
+    #xcode-select --install &> /dev/null
 
     # Wait until the XCode Command Line Tools are installed
-    until xcode-select --print-path &> /dev/null; do
-        sleep 5
-    done
+    #until xcode-select --print-path &> /dev/null; do
+    #    sleep 5
+    #done
 
     # Prompt user to agree to the terms of the Xcode license
     # https://github.com/alrra/dotfiles/issues/10
-    sudo xcodebuild -license
+    #sudo xcodebuild -license
 
     log_info "XCode Command Line Tools Installed"
 fi

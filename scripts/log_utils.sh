@@ -41,6 +41,8 @@ log_info() {
   log "INFO" "$LTBLUE" "$@"
 }
 
+export log_info
+
 log_warn() {
   log "WARN" "$ORANGE" "$@"
 }

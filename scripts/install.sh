@@ -9,6 +9,7 @@ set -Eueo pipefail
 # Set env variables for the script
 DOTCONFIG=$HOME/.config
 DOTFILES=$HOME/.dotfiles
+SCRIPTFILES=$HOME/Documents/Projects/dev-setup/scripts
 
 # Include the log helpers and banner
 source ./log_utils.sh
@@ -34,7 +35,7 @@ installFonts() {
 
 prepOS() {
     log_info "Updating OSX and installing Xcode command line tools"
-    #./osxprep.sh
+    ./osxprep.sh
 }
 
 configureOS() {
