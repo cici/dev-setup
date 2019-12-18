@@ -24,6 +24,7 @@ function ok() {
 }
 
 ok hello
+ok
 
 tput sgr0
 RED=$(tput setaf 1)

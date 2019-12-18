@@ -6,7 +6,7 @@
     aa = add --all
     co = checkout
     commit="git add . && git commit -m"
-    
+
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
     graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
@@ -121,8 +121,8 @@
 [core]
     # Use custom `.gitignore` and `.gitattributes`
     editor = vim
-    excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes_global
 
     # Treat spaces before tabs and all kinds of trailing whitespace as an error
     # [default] trailing-space: looks for spaces at the end of a line

@@ -4,7 +4,6 @@
 sudo -v
 
 source ./log_utils.sh
-source ./echos.sh
 
 # Keep-alive: update existing `sudo` time stamp until `osxprep.sh` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -13,7 +12,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 log_info "Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
 #sudo softwareupdate -ia --verbose
-ok
 
 # ###########################################################
 # /etc/hosts -- spyware/ad blocking
@@ -24,7 +22,6 @@ if [[ $response =~ (yes|y|Y) ]];then
     #sudo cp /etc/hosts /etc/hosts.backup
     log_warn "cp ../config_files/hosts /etc/hosts"
     #sudo cp ./configs/hosts /etc/hosts
-    ok
     log_info "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
     log_info "Not updating hosts file";
@@ -60,8 +57,8 @@ fi
 # ###########################################################
 log_info "Create an SSH key for Github, Gitlab and whatever else"
 # Create SSH key
-ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"
-pbcopy < ~/.ssh/id_rsa.pub
+#ssh-keygen -t rsa -b 4096 -C "public.thomson@gmail.com"
+#pbcopy < ~/.ssh/id_rsa.pub
 log_warn "Now login to https://github.com/settings/keys and add the key that has already been copied to your clipboard."
 read -p "Press any key to continue. Ctrl-C to abort."
 

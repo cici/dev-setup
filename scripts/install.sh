@@ -13,7 +13,6 @@ SCRIPTFILES=$HOME/Documents/Projects/dev-setup/scripts
 
 # Include the log helpers and banner
 source ./log_utils.sh
-source ./echos.sh
 
 downloadInstallScript() {
     log_info "Getting code from Github"
@@ -41,6 +40,11 @@ prepOS() {
 configureOS() {
     log_info "Configuring OSX with preferred system defaults"
     #./osx.sh
+}
+
+doSymLink() {
+    log_info "Creating sym links for dotfiles"
+    ./makesymlinks.sh
 }
 
 # Main Program

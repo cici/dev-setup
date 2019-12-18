@@ -41,8 +41,6 @@ log_info() {
   log "INFO" "$LTBLUE" "$@"
 }
 
-export log_info
-
 log_warn() {
   log "WARN" "$ORANGE" "$@"
 }
@@ -52,7 +50,7 @@ log_success() {
 }
 
 print_main_banner() {
-  cd "$HOME"
+  pushd "$HOME"
   command cat <<EOF
 $BLUE
 
@@ -79,6 +77,7 @@ $BLUE
 $RESET
 EOF
   fi
+  popd
 }
 
 usage() {
