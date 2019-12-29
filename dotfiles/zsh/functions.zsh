@@ -565,3 +565,10 @@ export -f clean_work_path
 
 # Create a new git repo with one README commit and CD into it
 function gitnr() { mkdir $1; cd $1; git init; touch README.md; git add README.md; git commit -mFirst-commit;}
+
+# Git add all files, commit with comment and push to remote repo
+function acp() {
+  git add .
+  git commit -m "$1"
+  git push
+}

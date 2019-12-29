@@ -67,11 +67,7 @@ brew install gradle # https://gradle.org/
 brew cask install java
 brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 brew install node # https://nodejs.org/en/
-brew install python3
-brew install ruby
-brew install ruby-build
-brew install rbenv
-LINE='eval "$(rbenv init -)"'
+brew install python3 # https://www.python.org/
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
@@ -93,12 +89,12 @@ brew tap homebrew/services
 brew tap wtfutil/wtfutil
 
 # Install infrastructure tools
-brew cask install docker
-brew install docker # https://www.docker.com/
+echo_warn "Installing infrastructure  tools and database"
+brew cask install docker  # https://www.docker.com/
 brew install mysql # https://www.mysql.com
-brew install docker-compose
-brew install docker-completion
-brew install docker-compose-completion
+brew install docker-compose # https://docs.docker.com/compose/
+brew install docker-completion # https://docs.docker.com/compose/completion/
+brew install docker-compose-completion # https://docs.docker.com/compose/completion/
 
 # Install other useful binaries.
 echo_warn "Installing command line tools"
@@ -119,20 +115,17 @@ brew install openssh # https://www.openssh.com/
 brew install openssl # https://www.openssl.org/
 brew install pandoc # https://pandoc.org/
 brew install speedtest_cli # https://github.com/sivel/speedtest-cli
+brew install starship # https://github.com/starship/starship
 brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
 brew install thefuck # https://github.com/nvbn/thefuck
 brew install tmux # https://www.iterm2.com/documentation-tmux-integration.html
 brew install tree # http://mama.indstate.edu/users/ice/tree/
 brew install vim --override-system-vi # https://www.vim.org/
-brew install watch
+brew install watch # https://formulae.brew.sh/formula/watch
 brew install wine # https://www.winehq.org/
 brew install wtfutil # https://wtfutil.com/
 brew install xpdf # https://www.xpdfreader.com/
 brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
-
-# Install Heroku
-brew install heroku/brew/heroku
-heroku update
 
 # Install fonts
 echo_warn "Installing fonts and font tools..."
@@ -160,6 +153,7 @@ brew cask install atom # https://atom.io/
 brew cask install avast-security # https://www.avast.com/en-us/index
 brew cask install bitwarden # https://bitwarden.com/
 brew cask install dash # https://kapeli.com/dash
+brew cask install datagrip # https://www.jetbrains.com/datagrip/
 brew cask install diffmerge # https://sourcegear.com/diffmerge/
 brew cask install dropbox # https://www.dropbox.com/
 brew cask install evernote # https://evernote.com/

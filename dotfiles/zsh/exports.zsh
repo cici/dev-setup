@@ -21,7 +21,8 @@ export LANGUAGE='en_US.UTF-8'
 # Programming language exports
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PYENV_ROOT="$HOME/.pyenv"
+export PYTHONPATH="/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages"
+
 
 # Only allow pip to run if inside a virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
@@ -49,8 +50,6 @@ export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-"/usr/local"}
 export HOMEBREW_CELLAR=${HOMEBREW_CELLAR:-"/usr/local/Cellar"}
 export HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local/Homebrew"}
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-#export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*" --glob "!node_modules/*"'
 
 if [ -n "$JAVA_HOME" ]; then
   export JDK_HOME=$JAVA_HOME

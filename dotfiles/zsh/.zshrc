@@ -6,11 +6,14 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(aws git git-flow docker docker-compose pip python brew osx npm virtualenv virtualenvwrapper)
 
+PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/bin:$PATH
+export PATH
 
 # Additional scripts
 source $DOTFILES/zsh/plugins.zsh
-source $DOTFILES/zsh/theme.zsh
 source $DOTFILES/zsh/aliases.zsh
+source $DOTFILES/zsh/exports.zsh
 source $DOTFILES/zsh/functions.zsh
 
 # Make sure navi is loaded for zsh
@@ -20,28 +23,9 @@ source "$(navi widget zsh)"
 # source $ZSH/oh-my-zsh.sh
 [ -s "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
 
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 #[ -f ~/.secrets ] && source ~/.secrets
 #[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #[ -f ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# aliases
-alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
-alias mv='mv --interactive --verbose' # Move nodes with interactive mode and extra verbosity.
-alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
-alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
-alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
-alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
-alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
-alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
-alias la='ls -l --almost-all --si' # List nodes with their details.
-alias v='vim'
-alias vc='nvim ~/.config/nvim/init.vim'
-alias zb='z -b'
-alias l='exa -lahF'
-alias la="exa -abghl --git --color=automatic"
-alias find='fd'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=121'
 
@@ -72,12 +56,6 @@ setopt ALWAYS_TO_END
 setopt COMPLETE_IN_WORD
 unsetopt FLOW_CONTROL
 unsetopt MENU_COMPLETE
-#zstyle ':completion:*:*:*:*:*' menu select
-#zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
-#zstyle ':completion::complete:*' use-cache 1
-#zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
 
@@ -86,3 +64,5 @@ PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
 
 #source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
+
+eval "$(starship init zsh)"
