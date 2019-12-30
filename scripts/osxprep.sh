@@ -3,7 +3,7 @@
 # Ask for the administrator password upfront
 sudo -v
 
-CONFIGFILES=$HOME/Documents/Project/dev-setup/config_files
+CONFIGFILES=$HOME/Documents/Projects/dev-setup/config_files
 
 source ./log_utils.sh
 
