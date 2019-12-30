@@ -34,17 +34,17 @@ installFonts() {
 
 prepOS() {
     log_info "Updating OSX and installing Xcode command line tools"
-    ./osxprep.sh
+    $SCRIPTFILES/osxprep.sh
 }
 
 configureOS() {
     log_info "Configuring OSX with preferred system defaults"
-    #./osx.sh
+    $SCRIPTFILES/osx.sh
 }
 
 doSymLink() {
     log_info "Creating sym links for dotfiles"
-    ./makesymlinks.sh
+    $SCRIPTFILES/makesymlinks.sh
 }
 
 # Main Program
