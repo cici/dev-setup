@@ -3,6 +3,8 @@
 # Ask for the administrator password upfront
 sudo -v
 
+CONFIGFILES=$HOME/Documents/Project/dev-setup/config_files
+
 source ./log_utils.sh
 
 # Keep-alive: update existing `sudo` time stamp until `osxprep.sh` has finished
@@ -21,7 +23,7 @@ if [[ $response =~ (yes|y|Y) ]];then
     log_warn "cp /etc/hosts /etc/hosts.backup"
     sudo cp /etc/hosts /etc/hosts.backup
     log_warn "cp ../config_files/hosts /etc/hosts"
-    sudo cp ./configs/hosts /etc/hosts
+    sudo cp $CONFIGFILES/hosts /etc/hosts
     log_info "Your /etc/hosts file has been updated. Last version is saved in /etc/hosts.backup"
 else
     log_info "Not updating hosts file";
