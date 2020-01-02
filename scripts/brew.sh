@@ -23,12 +23,14 @@ else
   echo_ok "Homebrew already installed"
 fi
 
+echo_ok "Ensure the latest Homebrew and formula are installed"
 # Make sure we’re using the latest Homebrew.
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all && brew cask upgrade
+brew upgrade && brew cask upgrade
 
+echo_ok "Begin Software Installation"
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils # https://www.gnu.org/software/coreutils/
@@ -58,13 +60,13 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # Change to the new shell, prompts for password
 chsh -s /usr/local/bin/zsh
 
-# Install `wget` with IRI support.
-brew install wget --with-iri # https://www.gnu.org/software/wget/
+# Install `wget`.
+brew install wget # https://www.gnu.org/software/wget/
 
 # Install Development Languages
 echo_warn "Installing development languages..."
 brew install gradle # https://gradle.org/
-brew cask install java
+#brew cask install java
 brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 brew install node # https://nodejs.org/en/
 brew install python3 # https://www.python.org/
@@ -89,7 +91,7 @@ brew tap homebrew/services
 brew tap wtfutil/wtfutil
 
 # Install infrastructure tools
-echo_warn "Installing infrastructure  tools and database"
+echo_warn "Installing infrastructure tools and database"
 brew cask install docker  # https://www.docker.com/
 brew install mysql # https://www.mysql.com
 brew install docker-compose # https://docs.docker.com/compose/
@@ -120,9 +122,8 @@ brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
 brew install thefuck # https://github.com/nvbn/thefuck
 brew install tmux # https://www.iterm2.com/documentation-tmux-integration.html
 brew install tree # http://mama.indstate.edu/users/ice/tree/
-brew install vim --override-system-vi # https://www.vim.org/
+brew install vim # https://www.vim.org/
 brew install watch # https://formulae.brew.sh/formula/watch
-brew install wine # https://www.winehq.org/
 brew install wtfutil # https://wtfutil.com/
 brew install xpdf # https://www.xpdfreader.com/
 brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
@@ -150,12 +151,12 @@ brew cask install 1password # https://1password.com/
 brew cask install 1password-cli # https://support.1password.com/command-line/
 brew cask install alfred # https://www.alfredapp.com/
 brew cask install atom # https://atom.io/
-brew cask install avast-security # https://www.avast.com/en-us/index
 brew cask install bitwarden # https://bitwarden.com/
 brew cask install dash # https://kapeli.com/dash
 brew cask install datagrip # https://www.jetbrains.com/datagrip/
 brew cask install diffmerge # https://sourcegear.com/diffmerge/
 brew cask install dropbox # https://www.dropbox.com/
+brew cask install eddie # https://formulae.brew.sh/cask/eddie
 brew cask install evernote # https://evernote.com/
 brew cask install firefox # https://www.mozilla.org/en-US/firefox/new/
 brew cask install gimp # https://www.gimp.org/
@@ -163,6 +164,7 @@ brew cask install gitter # https://gitter.im/explore/tags/homebrew
 brew cask install google-chrome # https://www.google.com/chrome/
 brew cask install handbrake # https://handbrake.fr/
 brew cask install intellij-idea-ce # https://www.jetbrains.com/idea/
+brew cask install idrive # https://www.idrive.com/
 brew cask install iterm2 # https://www.iterm2.com/
 brew cask install macdown # https://macdown.uranusjr.com/
 brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
@@ -197,7 +199,7 @@ brew install lolcat
 
 echo_warn "Cleaning up the cellar"
 # Remove outdated versions from the cellar.
-brew cleanup && brew cask cleanup
+brew cleanup
 
 rm -f -r /Library/Caches/Homebrew/* > /dev/null 2>&1
 

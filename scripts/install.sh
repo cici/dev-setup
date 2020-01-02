@@ -42,6 +42,11 @@ configureOS() {
     $SCRIPTFILES/osx.sh
 }
 
+installSoftware() {
+    log_info "Installing software and utilities"
+    $SCRIPTFILES/brew.sh
+}
+
 doSymLink() {
     log_info "Creating sym links for dotfiles"
     $SCRIPTFILES/makesymlinks.sh
@@ -68,8 +73,12 @@ else
                 doSymLink
                 shift
                 ;;
-            -i | --install)
+            -d | --download)
                 downloadInstallScript
+                shift
+                ;;
+            -i | --install)
+                installSoftware
                 shift
                 ;;
             -f | --fonts)

@@ -86,6 +86,7 @@ usage() {
     echo "Recommended order for first run:  (or use all)"
     echo "   -p, --prep            Updates OSX and installs XCode command line tools"
     echo "   -c, --config          Configures OSX"
+    echo "   -d, --download        Download the install file"
     echo "   -s, --sync            Synchronizes dotfiles to home directory and creates symbolic links"
     echo "   -l, --lang            Programming language support (Java, Python 3, Node)"
     echo "   -i, --install         Install Homebrew and applications"
