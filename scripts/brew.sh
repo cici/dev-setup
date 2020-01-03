@@ -152,6 +152,7 @@ brew cask install 1password-cli # https://support.1password.com/command-line/
 brew cask install alfred # https://www.alfredapp.com/
 brew cask install atom # https://atom.io/
 brew cask install bitwarden # https://bitwarden.com/
+brew cask install cyberduck # https://cyberduck.io/
 brew cask install dash # https://kapeli.com/dash
 brew cask install datagrip # https://www.jetbrains.com/datagrip/
 brew cask install diffmerge # https://sourcegear.com/diffmerge/
@@ -168,8 +169,10 @@ brew cask install idrive # https://www.idrive.com/
 brew cask install iterm2 # https://www.iterm2.com/
 brew cask install macdown # https://macdown.uranusjr.com/
 brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
+brew cask install polar-bookshelf # https://getpolarized.io/
 brew cask install postbox # https://www.postbox-inc.com/
 brew cask install postman # https://www.getpostman.com/
+brew cask install shift # https://tryshift.com/
 brew cask install skype # https://www.skype.com/en/
 brew cask install slack # https://slack.com/
 brew cask install sourcetree # https://www.sourcetreeapp.com/
