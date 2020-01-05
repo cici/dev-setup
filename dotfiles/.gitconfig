@@ -120,7 +120,7 @@
 
 [core]
     # Use custom `.gitignore` and `.gitattributes`
-    editor = vim
+    editor = code --wait
     excludesfile = ~/.gitignore_global
     attributesfile = ~/.gitattributes_global
 
@@ -204,6 +204,7 @@
     followTags = true
 
 [commit]
+  template = /Users/cici/.stCommitMsg
   verbose = true
 
 # URL shorthands (rewrites of repo paths)

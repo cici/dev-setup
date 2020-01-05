@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Helper functions
 function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
