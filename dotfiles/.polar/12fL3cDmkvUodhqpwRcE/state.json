@@ -1,0 +1,47 @@
+{
+  "annotationInfo": {},
+  "version": 2,
+  "attachments": {},
+  "docInfo": {
+    "progress": 0,
+    "pagemarkType": "SINGLE_COLUMN",
+    "properties": {},
+    "archived": false,
+    "flagged": false,
+    "tags": {},
+    "nrPages": 1,
+    "fingerprint": "12fL3cDmkvUodhqpwRcE",
+    "added": "2019-06-06T16:46:37.717Z",
+    "filename": "1HYxbhniCB-Understanding_JSON_Web_Token_Authentication___Bits_and_Pieces.phz",
+    "uuid": "z2019-06-06T16:46:37.777Z+000005-109558502774",
+    "lastUpdated": "2019-06-06T16:46:37.777Z",
+    "nrComments": 0,
+    "nrNotes": 0,
+    "nrFlashcards": 0,
+    "nrTextHighlights": 0,
+    "nrAreaHighlights": 0,
+    "nrAnnotations": 0,
+    "title": "Understanding JSON Web Token Authentication – Bits and Pieces",
+    "url": "https://blog.bitsrc.io/understanding-json-web-token-authentication-a1febf0e15"
+  },
+  "pageMetas": {
+    "1": {
+      "pagemarks": {},
+      "notes": {},
+      "comments": {},
+      "questions": {},
+      "flashcards": {},
+      "textHighlights": {},
+      "areaHighlights": {},
+      "screenshots": {},
+      "thumbnails": {},
+      "pageInfo": {
+        "num": 1,
+        "dimensions": {
+          "width": 1024,
+          "height": 21602
+        }
+      }
+    }
+  }
+}

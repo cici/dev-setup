@@ -1,0 +1,47 @@
+{
+  "annotationInfo": {},
+  "version": 2,
+  "attachments": {},
+  "docInfo": {
+    "progress": 0,
+    "pagemarkType": "SINGLE_COLUMN",
+    "properties": {},
+    "archived": false,
+    "flagged": false,
+    "tags": {},
+    "nrPages": 1,
+    "fingerprint": "1TGCPfoaEMqPHJesKmH7",
+    "added": "2019-06-07T12:22:35.053Z",
+    "filename": "1Z1a1BQd34-Deploying_Spring_Boot_Applications.phz",
+    "uuid": "z2019-06-07T12:22:35.106Z+000005-002419899290",
+    "lastUpdated": "2019-06-07T12:22:35.106Z",
+    "nrComments": 0,
+    "nrNotes": 0,
+    "nrFlashcards": 0,
+    "nrTextHighlights": 0,
+    "nrAreaHighlights": 0,
+    "nrAnnotations": 0,
+    "title": "Deploying Spring Boot Applications",
+    "url": "https://medium.com/swlh/deploying-spring-boot-applications-15e14db25ff0"
+  },
+  "pageMetas": {
+    "1": {
+      "pagemarks": {},
+      "notes": {},
+      "comments": {},
+      "questions": {},
+      "flashcards": {},
+      "textHighlights": {},
+      "areaHighlights": {},
+      "screenshots": {},
+      "thumbnails": {},
+      "pageInfo": {
+        "num": 1,
+        "dimensions": {
+          "width": 1024,
+          "height": 10990
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "annotationInfo": {},
+  "version": 2,
+  "attachments": {},
+  "docInfo": {
+    "progress": 0,
+    "pagemarkType": "SINGLE_COLUMN",
+    "properties": {},
+    "archived": false,
+    "flagged": false,
+    "tags": {},
+    "nrPages": 1,
+    "fingerprint": "1vfcu7mx6qNTYHUywSPQ",
+    "added": "2019-01-19T13:32:24.897Z",
+    "filename": "1PWwSZAm3f-Security_Checklist.phz",
+    "uuid": "z2019-01-19T13:32:24.943Z+000005-167291447535",
+    "lastUpdated": "2019-01-19T13:32:24.943Z",
+    "nrComments": 0,
+    "nrNotes": 0,
+    "nrFlashcards": 0,
+    "nrTextHighlights": 0,
+    "nrAreaHighlights": 0,
+    "nrAnnotations": 0,
+    "title": "Security Checklist",
+    "url": "https://securitycheckli.st/"
+  },
+  "pageMetas": {
+    "1": {
+      "pagemarks": {},
+      "notes": {},
+      "comments": {},
+      "questions": {},
+      "flashcards": {},
+      "textHighlights": {},
+      "areaHighlights": {},
+      "screenshots": {},
+      "thumbnails": {},
+      "pageInfo": {
+        "num": 1,
+        "dimensions": {
+          "width": 750,
+          "height": 15300
+        }
+      }
+    }
+  }
+}

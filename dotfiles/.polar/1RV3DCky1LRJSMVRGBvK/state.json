@@ -1,0 +1,47 @@
+{
+  "annotationInfo": {},
+  "version": 2,
+  "attachments": {},
+  "docInfo": {
+    "progress": 0,
+    "pagemarkType": "SINGLE_COLUMN",
+    "properties": {},
+    "archived": false,
+    "flagged": false,
+    "tags": {},
+    "nrPages": 1,
+    "fingerprint": "1RV3DCky1LRJSMVRGBvK",
+    "added": "2019-01-25T13:17:43.664Z",
+    "filename": "1223fA4bHf-All_You_Need_To_Know_About_Unit_Testing_with_Spring_Boot___reflectoring.phz",
+    "uuid": "z2019-01-25T13:17:43.711Z+000005-183490763116",
+    "lastUpdated": "2019-01-25T13:17:43.711Z",
+    "nrComments": 0,
+    "nrNotes": 0,
+    "nrFlashcards": 0,
+    "nrTextHighlights": 0,
+    "nrAreaHighlights": 0,
+    "nrAnnotations": 0,
+    "title": "All You Need To Know About Unit Testing with Spring Boot - reflectoring",
+    "url": "https://reflectoring.io/unit-testing-spring-boot/"
+  },
+  "pageMetas": {
+    "1": {
+      "pagemarks": {},
+      "notes": {},
+      "comments": {},
+      "questions": {},
+      "flashcards": {},
+      "textHighlights": {},
+      "areaHighlights": {},
+      "screenshots": {},
+      "thumbnails": {},
+      "pageInfo": {
+        "num": 1,
+        "dimensions": {
+          "width": 750,
+          "height": 12603
+        }
+      }
+    }
+  }
+}

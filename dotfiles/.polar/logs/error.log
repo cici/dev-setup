@@ -1,0 +1,171 @@
+[2019-01-21T18:17:30.973Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-21T18:17:30.974Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-21T18:17:30.985Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-21T18:17:30.986Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-25T01:27:50.577Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-25T01:27:50.578Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-25T01:27:50.579Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-25T01:27:50.579Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-01-25T13:17:44.231Z] [error] [error] [1.9.0] [StreamInterceptors.ts] Request error: https://tag.apxlv.com/tag/partner/222?pixel_mode=pixel 
+Error: net::ERR_TOO_MANY_REDIRECTS
+[2019-01-25T17:33:54.152Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+    at WebContents.EventEmitter.emit (domain.js:442:20)
+    at WebContents.topLevelDomainCallback (domain.js:121:23)
+[2019-01-25T17:33:54.158Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+    at WebContents.EventEmitter.emit (domain.js:442:20)
+    at WebContents.topLevelDomainCallback (domain.js:121:23)
+[2019-01-25T17:33:54.233Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Unhandled rejection: 
+Error: Cannot find module '../dialog'
+    at Module._resolveFilename (internal/modules/cjs/loader.js:602:15)
+    at Function.Module._resolveFilename (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:528:25)
+    at Function._load (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/node/dist/integrations/console.js:60:47)
+    at Module.require (internal/modules/cjs/loader.js:658:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.get [as dialog] (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/api/exports/electron.js:11:16)
+    at OnUncaughtException.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/dist/main/integrations/onuncaughtexception.js:48:36)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/dist/main/integrations/onuncaughtexception.js:4:58)
+[2019-01-25T17:33:54.236Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Unhandled rejection: 
+Error: Cannot find module '../dialog'
+    at Module._resolveFilename (internal/modules/cjs/loader.js:602:15)
+    at Function.Module._resolveFilename (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:528:25)
+    at Function._load (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/node/dist/integrations/console.js:60:47)
+    at Module.require (internal/modules/cjs/loader.js:658:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.get [as dialog] (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/api/exports/electron.js:11:16)
+    at OnUncaughtException.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/dist/main/integrations/onuncaughtexception.js:48:36)
+    at Generator.next (<anonymous>)
+    at fulfilled (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/dist/main/integrations/onuncaughtexception.js:4:58)
+[2019-02-06T22:23:05.245Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-02-06T22:23:05.247Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-06-06T16:46:48.913Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-06-06T16:46:48.914Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-06-07T12:23:23.377Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-06-07T12:23:23.378Z] [error] [error] [1.9.0] [MainAppExceptionHandlers.js] Uncaught exception: 
+TypeError: Error processing argument at index 0, conversion failure from #<WebContents>
+    at detachGuest (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:283:18)
+    at WebContents.guest.once (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/guest-view-manager.js:88:7)
+    at Object.onceWrapper (events.js:273:13)
+    at WebContents.emit (events.js:187:15)
+[2019-06-09T20:50:46.195Z] [error] [error] [1.19.8] [Capture.js] Loading URL failed: 
+Error: ERR_ABORTED (-3) loading 'https://blog.apollographql.com/securing-your-graphql-api-from-malicious-queries-16130a324a6b'
+    at rejectAndCleanup (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/navigation-controller.js:72:21)
+    at WebContents.navigationListener (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/navigation-controller.js:93:20)
+    at WebContents.emit (events.js:199:15)
+[2019-06-09T20:50:46.570Z] [error] [error] [1.19.8] [MainAppExceptionHandlers.js] Unhandled rejection: 
+SentryError: HTTP Error (429): Creation of this event was denied due to rate limiting
+    at new SentryError (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/core/src/error.ts:7:5)
+    at ClientRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/src/main/transports/net.ts:33:20)
+    at ClientRequest.emit (events.js:194:13)
+    at ClientRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/api/net.js:207:12)
+    at URLRequest.emit (events.js:194:13)
+    at URLRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.topLevelDomainCallback (domain.js:124:23)
+[2019-06-09T20:50:46.571Z] [error] [error] [1.19.8] [MainAppExceptionHandlers.js] Unhandled rejection: 
+SentryError: HTTP Error (429): Creation of this event was denied due to rate limiting
+    at new SentryError (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/core/src/error.ts:7:5)
+    at ClientRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/src/main/transports/net.ts:33:20)
+    at ClientRequest.emit (events.js:194:13)
+    at ClientRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/api/net.js:207:12)
+    at URLRequest.emit (events.js:194:13)
+    at URLRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.topLevelDomainCallback (domain.js:124:23)
+[2019-06-09T20:50:46.712Z] [error] [error] [1.19.8] [MainAppExceptionHandlers.js] Unhandled rejection: 
+SentryError: HTTP Error (429): Creation of this event was denied due to rate limiting
+    at new SentryError (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/core/src/error.ts:7:5)
+    at ClientRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/src/main/transports/net.ts:33:20)
+    at ClientRequest.emit (events.js:194:13)
+    at ClientRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/api/net.js:207:12)
+    at URLRequest.emit (events.js:194:13)
+    at URLRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.topLevelDomainCallback (domain.js:124:23)
+[2019-06-09T20:50:46.713Z] [error] [error] [1.19.8] [MainAppExceptionHandlers.js] Unhandled rejection: 
+SentryError: HTTP Error (429): Creation of this event was denied due to rate limiting
+    at new SentryError (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/core/src/error.ts:7:5)
+    at ClientRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/app.asar/node_modules/@sentry/electron/src/main/transports/net.ts:33:20)
+    at ClientRequest.emit (events.js:194:13)
+    at ClientRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.<anonymous> (/Applications/Polar Bookshelf.app/Contents/Resources/electron.asar/browser/api/net.js:207:12)
+    at URLRequest.emit (events.js:194:13)
+    at URLRequest.EventEmitter.emit (domain.js:469:20)
+    at URLRequest.topLevelDomainCallback (domain.js:124:23)
