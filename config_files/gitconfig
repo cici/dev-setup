@@ -106,11 +106,30 @@
         git reset --soft \"HEAD~$n\"; \
     }; f"
 
+# ============================================================================
+# Repo settings and command options
+# ============================================================================
+[blame]
+	date = short
+	showEmail = true
+
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
+
+[tag]
+	forceSignAnnotated = true
+
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
 [commit]
 	verbose = true
 	gpgsign = true
 
 [core]
+    compression = -1
 	editor = code --wait
     autocrlf = input
 	commitGraph = true
@@ -129,32 +148,76 @@
     # Prevent showing files whose names contain non-ASCII symbols as unversioned.
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
     precomposeunicode = false
-
     ignorecase = false
+    	
+	sharedRepository = 0664
+	commentchar = ";"
 
-[branch]
-	autosetupmerge = always
-	autosetuprebase = always
-
-[tag]
-	forceSignAnnotated = true
-
-[apply]
-    # Detect whitespace errors when applying a patch
-    whitespace = fix
+[diff]
+	compactionHeuristic = true
+	renames = true
+	renameLimit = 12650
 
 [pager]
 	# insanely beautiful diffs ==> npm install -g diff-so-fancy
 	diff = diff-so-fancy | less --tabs=4 -RFX
 	show = diff-so-fancy | less --tabs=4 -RFX
 
-[color]
-	ui = true
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+	tool = opendiff
+	renameLimit = 0
 
+[push]
+    # Use the Git 1.x.x default to avoid errors on machines with old Git
+    # installations. To use `simple` instead, add this to your `~/.extra` file:
+    # `git config --global push.default simple`. See http://git.io/mMah-w.
+    default = matching
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
+
+[rebase]
+	stat = true
+
+[pretty]
+	ld      = %C(yellow)%h %C(reset)%s %C(green)(%cr) %C(blue)<%an>%C(magenta)%d%C(reset)
+    
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[stash]
+	showPatch = true
+[log]
+    date = relative
+
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
+
+[github]
+    user = cici
+	# Use Keychain.app
+	# https://stackoverflow.com/a/7552971/230473
+	#token = !security find-generic-password -gs \"GitHub API Token\" 2>&1 >/dev/null | awk '/password/ {print $2}' | tr -d \\\"
+
+[gitlab]
+    user = cici_sleestak
+
+[credential]
+    helper = osxkeychain
+# ============================================================================
+# Color
+# ============================================================================
 [color]
     # Use colors in Git commands that are capable of colored output when
     # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-    ui = auto
+    branch      = auto
+	diff        = auto
+	grep        = auto
+	interactive = auto
+	status      = auto
+	ui          = auto
+	pager       = true
 
 [color "branch"]
     current = yellow reverse
@@ -182,24 +245,9 @@
     changed = green
     untracked = cyan
 
-[include]
-	path = ~/.gitconfig.local
-
-[merge]
-    # Include summaries of merged commits in newly created merge commit messages
-    log = true
-	tool = opendiff
-	renameLimit = 0
-
-[push]
-    # Use the Git 1.x.x default to avoid errors on machines with old Git
-    # installations. To use `simple` instead, add this to your `~/.extra` file:
-    # `git config --global push.default simple`. See http://git.io/mMah-w.
-    default = matching
-    # Make `git push` push relevant annotated tags when pushing branches out.
-    followTags = true
-
-# URL shorthands (rewrites of repo paths)
+# ============================================================================
+# URL aliases
+# ============================================================================
 [url "git@github.com:"]
     insteadOf = "https://github.com/"
     insteadOf = "gh:"
@@ -218,22 +266,6 @@
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
 
-[remote "origin"]
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[stash]
-	showPatch = true
-[log]
-    date = relative
-	
-[help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
-
-[github]
-    user = cici
-
-[gitlab]
-    user = cici_sleestak
-
-[credential]
-    helper = osxkeychain
+# ============================================================================
+[include]
+	path = ./aliases,gitconfig
