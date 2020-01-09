@@ -150,6 +150,7 @@ echo_warn "Installing graphical tools"
 brew cask install 1password # https://1password.com/
 brew cask install 1password-cli # https://support.1password.com/command-line/
 brew cask install alfred # https://www.alfredapp.com/
+brew cask install aptanastudio # http://www.aptana.com/
 brew cask install atom # https://atom.io/
 brew cask install bitwarden # https://bitwarden.com/
 brew cask install cyberduck # https://cyberduck.io/
