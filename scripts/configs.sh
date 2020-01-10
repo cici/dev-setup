@@ -9,6 +9,11 @@ set -Eueo pipefail
 CONFIGFILES=$HOME/Documents/Projects/dev-setup/config_files
 
 cp -R $CONFIGFILES/.polar $HOME
+mkdir -p $HOME/.vim/colors
+cp $CONFIGFILES/solarized.vim $HOME/.vim/colors
 cp $CONFIGFILES/bat.conf $HOME
 cp $CONFIGFILES/ssh.config $HOME/.ssh/config
 cp $CONFIGFILES/youtube-dl.config $HOME
+
+# Install the crontab file
+crontab $CONFIGFILES/crontab.txt > /dev/null 2>&1
