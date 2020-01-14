@@ -103,6 +103,7 @@ echo_warn "Installing command line tools"
 brew install awscli # https://aws.amazon.com/cli/
 brew install bat # https://github.com/sharkdp/bat
 brew install bitwarden-cli # https://bitwarden.com/
+brew install broot # https://dystroy.org/broot/
 brew install diff-so-fancy # https://github.com/so-fancy/diff-so-fancy
 brew install exa # https://the.exa.website/
 brew install ffmpeg # https://ffmpeg.org/

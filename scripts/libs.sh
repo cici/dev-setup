@@ -10,3 +10,5 @@ npm install angular -g
 npm install angular-cli -g
 npm install typescript -g
 npm install serverless -g
+npm install react -g
+npm install react-dom -g

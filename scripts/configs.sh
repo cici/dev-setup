@@ -17,3 +17,7 @@ cp $CONFIGFILES/youtube-dl.config $HOME
 
 # Install the crontab file
 crontab $CONFIGFILES/crontab.txt > /dev/null 2>&1
+
+# Favorite servers
+# AFP from thomsontown
+cp ~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.FavoriteServers.sfl
