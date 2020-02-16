@@ -120,7 +120,7 @@
 
 [core]
     # Use custom `.gitignore` and `.gitattributes`
-    editor = vim
+    editor = code --wait
     excludesfile = ~/.gitignore_global
     attributesfile = ~/.gitattributes_global
 
@@ -187,14 +187,18 @@
     log = true
     tool = diffmerge
 [mergetool "diffmerge"]
-    cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-    trustExitCode = false
+    #cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+    #trustExitCode = false
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [diff]
-    tool = diffmerge
-[difftool "diffmerge"]
-    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-    prompt = false
-
+#    tool = diffmerge
+    tool = sourcetree
+#[difftool "diffmerge"]
+#    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+#    prompt = false
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 [push]
     # Use the Git 1.x.x default to avoid errors on machines with old Git
     # installations. To use `simple` instead, add this to your `~/.extra` file:
@@ -204,6 +208,7 @@
     followTags = true
 
 [commit]
+  template = /Users/cici/.stCommitMsg
   verbose = true
 
 # URL shorthands (rewrites of repo paths)

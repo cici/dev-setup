@@ -7,7 +7,6 @@ set -Eueo pipefail
 # or add new configurations
 
 # Set env variables for the script
-DOTCONFIG=$HOME/.config
 DOTFILES=$HOME/.dotfiles
 SCRIPTFILES=$HOME/Documents/Projects/dev-setup/scripts
 

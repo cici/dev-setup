@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Helper functions
 function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
@@ -103,6 +103,7 @@ echo_warn "Installing command line tools"
 brew install awscli # https://aws.amazon.com/cli/
 brew install bat # https://github.com/sharkdp/bat
 brew install bitwarden-cli # https://bitwarden.com/
+brew install broot # https://dystroy.org/broot/
 brew install diff-so-fancy # https://github.com/so-fancy/diff-so-fancy
 brew install exa # https://the.exa.website/
 brew install ffmpeg # https://ffmpeg.org/
@@ -150,6 +151,7 @@ echo_warn "Installing graphical tools"
 brew cask install 1password # https://1password.com/
 brew cask install 1password-cli # https://support.1password.com/command-line/
 brew cask install alfred # https://www.alfredapp.com/
+brew cask install aptanastudio # http://www.aptana.com/
 brew cask install atom # https://atom.io/
 brew cask install bitwarden # https://bitwarden.com/
 brew cask install cyberduck # https://cyberduck.io/
