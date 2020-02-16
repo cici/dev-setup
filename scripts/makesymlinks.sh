@@ -18,8 +18,11 @@ for file in .*; do
     if [[ $file == "." || $file == ".." ]]; then
       continue
     fi
+    # if it is a directory then copy recursively
+    if [[ -d $file ]]; then
+	cp -R ~/$file/ $DOTFILES_BACKUP/$file
     # if the file exists:
-    if [[ -e ~/$file ]]; then
+    elif [[ -f ~/$file ]]; then
         cp ~/$file $DOTFILES_BACKUP/$file
         echo "backup saved as ~/.dotfiles_backup/$file"
     fi

@@ -52,6 +52,11 @@ doSymLink() {
     $SCRIPTFILES/makesymlinks.sh
 }
 
+configureSoftware() {
+    log_info "Installing config files"
+    $SCRIPTFILES/installConfigs.sh
+}
+
 # Main Program
 print_main_banner
 
@@ -81,12 +86,8 @@ else
                 installSoftware
                 shift
                 ;;
-            -f | --fonts)
-                installFonts
-                shift
-                ;;
             -c | --config)
-               configureOS
+               configureSoftware
                 shift
                 ;;
             -a | --all)
