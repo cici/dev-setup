@@ -4,7 +4,7 @@
 set -Eueo pipefail
 
 # Set some environment variables
-SETUP_DIR="$HOME/Documents/Projects/dev-setup"
+SETUP_DIR="$HOME/Projects/dev-setup"
 HOMEBREW_PREFIX="/usr/local"
 
 tput sgr0
