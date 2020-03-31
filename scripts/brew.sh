@@ -70,6 +70,7 @@ brew install gradle # https://gradle.org/
 brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 brew install node # https://nodejs.org/en/
 brew install python3 # https://www.python.org/
+brew install pyenv # https://github.com/pyenv/pyenv
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
@@ -174,9 +175,11 @@ brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
 brew cask install polar-bookshelf # https://getpolarized.io/
 brew cask install postbox # https://www.postbox-inc.com/
 brew cask install postman # https://www.getpostman.com/
+brew cask install sequel-pro # https://www.sequelpro.com/
 brew cask install shift # https://tryshift.com/
 brew cask install skype # https://www.skype.com/en/
 brew cask install slack # https://slack.com/
+brew cask install snagit # https://www.techsmith.com/screen-capture.html
 brew cask install sourcetree # https://www.sourcetreeapp.com/
 brew cask install spotify # https://www.spotify.com/us/
 brew cask install transmission # https://transmissionbt.com/
