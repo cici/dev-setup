@@ -71,6 +71,7 @@ brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 brew install node # https://nodejs.org/en/
 brew install python3 # https://www.python.org/
 brew install pyenv # https://github.com/pyenv/pyenv
+brew install pyenv-virtualenv # https://github.com/pyenv/pyenv-virtualenv
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
