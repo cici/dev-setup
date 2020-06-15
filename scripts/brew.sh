@@ -173,6 +173,7 @@ brew cask install idrive # https://www.idrive.com/
 brew cask install iterm2 # https://www.iterm2.com/
 brew cask install macdown # https://macdown.uranusjr.com/
 brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
+brew cask install notion # https://notion.so
 brew cask install polar-bookshelf # https://getpolarized.io/
 brew cask install postbox # https://www.postbox-inc.com/
 brew cask install postman # https://www.getpostman.com/
