@@ -12,3 +12,4 @@ npm install typescript -g
 npm install serverless -g
 npm install react -g
 npm install react-dom -g
+npm install yarn -g

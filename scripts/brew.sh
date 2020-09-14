@@ -123,12 +123,14 @@ brew install speedtest_cli # https://github.com/sivel/speedtest-cli
 brew install starship # https://github.com/starship/starship
 brew install the_silver_searcher # https://github.com/ggreer/the_silver_searcher
 brew install thefuck # https://github.com/nvbn/thefuck
+brew install tldr # https://github.com/tldr-pages/tldr
 brew install tmux # https://www.iterm2.com/documentation-tmux-integration.html
 brew install tree # http://mama.indstate.edu/users/ice/tree/
 brew install vim # https://www.vim.org/
 brew install watch # https://formulae.brew.sh/formula/watch
 brew install wtfutil # https://wtfutil.com/
 brew install xpdf # https://www.xpdfreader.com/
+brew install yarn # http://www.yarnpkg.com
 brew install youtube-dl # https://ytdl-org.github.io/youtube-dl/
 
 # Install fonts
@@ -173,6 +175,7 @@ brew cask install idrive # https://www.idrive.com/
 brew cask install iterm2 # https://www.iterm2.com/
 brew cask install macdown # https://macdown.uranusjr.com/
 brew cask install mysqlworkbench # https://www.mysql.com/products/workbench/
+brew cask install ngrok # https://ngrok.com
 brew cask install notion # https://notion.so
 brew cask install polar-bookshelf # https://getpolarized.io/
 brew cask install postbox # https://www.postbox-inc.com/
